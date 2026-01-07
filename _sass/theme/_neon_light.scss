@@ -41,7 +41,7 @@ $sidebar-link-max-width : 250px;
 $sidebar-screen-min-width : 1024px;
 
 /* Light theme for the site */
-html[data-theme="light"] {
+:root {
     --global-base-color : #{$primary-color};
     --global-bg-color : #{$background};
     --global-footer-bg-color : #{$background};
