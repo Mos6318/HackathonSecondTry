@@ -1,34 +1,38 @@
 /* ==========================================================================
-    NEON THEME - LIGHT VERSION (Companion)
+    NEON THEME - LIGHT VERSION (Custom Design)
     ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color : #ff00cc;
-/* Neon Pink */
-$gray : #7a8288;
-$dark-gray : mix(#000, $gray, 40%);
-$darker-gray : mix(#000, $gray, 60%);
-$light-gray : mix(#fff, $gray, 50%);
+$primary-color : #3C83EB;
+/* Bright Blue Accent */
+$gray : #747A9C;
+$dark-gray : #3D4466;
+/* Darker for readability on light bg */
+$darker-gray : #2a2e47;
+$light-gray : #8b91ab;
 
-$background : #ffffff;
-$background-light : #f9f9f9;
-$background-lighter : #f0f0f0;
-$text : #222222;
-$link : #00aaaa;
-/* Darker Cyan for readability on white */
-$link-dark : mix(#000, $link, 25%);
-$link-light : mix(#fff, $link, 25%);
+$background : #F5F7FA;
+/* Soft off-white with blue tint */
+$background-light : #FFFFFF;
+/* Pure white */
+$background-lighter : #E8EBF0;
+$text : #3D4466;
+/* Dark blue-grey for readability */
+$link : #3C83EB;
+/* Bright Blue */
+$link-dark : #2a5db0;
+$link-light : #5a9aef;
 
 /* Color codes used for the site */
-$danger-color : #ff0055;
-$info-color : #00ccff;
-$notice-color : #7a8288;
-$success-color : #00ff66;
-$warning-color : #ffcc00;
+$danger-color : #d73a49;
+$info-color : #3C83EB;
+$notice-color : #6a737d;
+$success-color : #28a745;
+$warning-color : #ffc107;
 
 /* Other basic settings for the template */
 $border-radius : 4px;
-$box-shadow : 0 1px 1px rgba(0, 0, 0, 0.125);
+$box-shadow : 0 1px 3px rgba(0, 0, 0, 0.1);
 $global-transition : all 0.2s ease-in-out;
 $masthead-height : 70px;
 $navicon-width : 28px;
@@ -41,17 +45,55 @@ html[data-theme="light"] {
     --global-base-color : #{$primary-color};
     --global-bg-color : #{$background};
     --global-footer-bg-color : #{$background};
-    --global-border-color : #{$light-gray};
+    --global-border-color : #{$background-lighter};
     --global-dark-border-color : #{$background-light};
-    --global-code-background-color: #fafafa;
-    --global-code-text-color : #{$darker-gray};
-    --global-fig-caption-color : #{$light-gray};
+    --global-code-background-color: #f6f8fa;
+    --global-code-text-color : #{$dark-gray};
+    --global-fig-caption-color : #{$gray};
     --global-link-color : #{$link};
-    --global-link-color-hover : #{$primary-color};
-    --global-link-color-visited : #{$link-light};
+    --global-link-color-hover : #{$link-dark};
+    --global-link-color-visited : #{$link-dark};
     --global-masthead-link-color : #{$text};
     --global-masthead-link-color-hover : #{$primary-color};
     --global-text-color : #{$text};
-    --global-text-color-light: #555555;
+    --global-text-color-light : #{$gray};
     --global-thead-color : #{$background-lighter};
+
+    /* Typography - Poppins Font */
+    font-family: 'Poppins', sans-serif;
+
+    /* Main titles use Poppins Black */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .page__title,
+    .archive__item-title,
+    .masthead__menu-item--lg a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        /* Black */
+    }
+
+    /* Description/body text uses Poppins Light */
+    p,
+    .page__content,
+    .archive__item-excerpt,
+    .author__bio,
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        /* Light */
+    }
+
+    /* Gradient for site title */
+    .masthead__menu-item--lg a {
+        background: linear-gradient(135deg, #3C83EB 0%, #CEE1EA 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+    }
 }
