@@ -58,4 +58,13 @@ html[data-theme="dark"] {
     --global-text-color : #{$text};
     --global-text-color-light: #e3e3e3;
     --global-thead-color : #{$background-lighter};
+
+    /* Gradient for site title */
+    .masthead__menu-item--lg a {
+        background: linear-gradient(135deg, #3C83EB 0%, #CEE1EA 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+    }
 }
