@@ -30,15 +30,17 @@ let setTheme = (theme) => {
     $("html").attr("data-theme") ||
     browserPref;
 
+  const basePath = "/HackathonSecondTry";
+
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun fa-gamepad").addClass("fa-moon");
+    $("#theme-icon").attr("src", basePath + "/assets/images/theme-icons/dark.png");
   } else if (use_theme === "cyberpunk") {
     $("html").attr("data-theme", "cyberpunk");
-    $("#theme-icon").removeClass("fa-sun fa-moon").addClass("fa-gamepad");
+    $("#theme-icon").attr("src", basePath + "/assets/images/theme-icons/cyberpunk.png");
   } else {
     $("html").attr("data-theme", "light");
-    $("#theme-icon").removeClass("fa-moon fa-gamepad").addClass("fa-sun");
+    $("#theme-icon").attr("src", basePath + "/assets/images/theme-icons/light.png");
   }
 };
 
