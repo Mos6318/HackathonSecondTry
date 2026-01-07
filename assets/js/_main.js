@@ -32,17 +32,27 @@ let setTheme = (theme) => {
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
-  } else if (use_theme === "light") {
+    $("#theme-icon").removeClass("fa-sun fa-gamepad").addClass("fa-moon");
+  } else if (use_theme === "cyberpunk") {
+    $("html").attr("data-theme", "cyberpunk");
+    $("#theme-icon").removeClass("fa-sun fa-moon").addClass("fa-gamepad");
+  } else {
     $("html").attr("data-theme", "light");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+    $("#theme-icon").removeClass("fa-moon fa-gamepad").addClass("fa-sun");
   }
 };
 
-// Toggle the theme manually
+// Toggle the theme manually (cycles through light → dark → cyberpunk)
 var toggleTheme = () => {
   const current_theme = $("html").attr("data-theme");
-  const new_theme = current_theme === "dark" ? "light" : "dark";
+  let new_theme;
+  if (current_theme === "light") {
+    new_theme = "dark";
+  } else if (current_theme === "dark") {
+    new_theme = "cyberpunk";
+  } else {
+    new_theme = "light";
+  }
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
 };
@@ -93,11 +103,11 @@ $(document).ready(function () {
   // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
   window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
-            setTheme(e.matches ? "dark" : "light");
-          }
-        });
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    });
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
@@ -114,7 +124,8 @@ $(document).ready(function () {
     if (didResize) {
       didResize = false;
       bumpIt();
-    }}, 250);
+    }
+  }, 250);
   var didResize = false;
   bumpIt();
 

@@ -1,0 +1,106 @@
+/* ==========================================================================
+    CYBERPUNK THEME - CUSTOM VERSION (Gaming Aesthetic)
+    ========================================================================== */
+
+/* Color codes used for the theme */
+$primary-color : #ff2a6d;
+/* Hot Pink/Magenta */
+$secondary-color : #05d9e8;
+/* Electric Cyan */
+$gray : #8b92b0;
+$dark-gray : #5a5f7a;
+$darker-gray : #3f4357;
+$light-gray : #b8bdd8;
+
+$background : #0a0e27;
+/* Deep space blue-black */
+$background-light : #01012b;
+/* Darker for cards */
+$background-lighter : #1a1f3a;
+$text : #e0e6f7;
+/* Bright silver-white */
+$link : #ff2a6d;
+/* Hot Pink */
+$link-dark : #d91f5a;
+$link-light : #05d9e8;
+/* Electric Cyan */
+
+/* Color codes used for the site */
+$danger-color : #ff2a6d;
+$info-color : #05d9e8;
+$notice-color : #8b92b0;
+$success-color : #00ff9f;
+$warning-color : #ffbd39;
+
+/* Other basic settings for the template */
+$border-radius : 4px;
+$box-shadow : 0 0 15px rgba(255, 42, 109, 0.3);
+$global-transition : all 0.2s ease-in-out;
+$masthead-height : 70px;
+$navicon-width : 28px;
+$navicon-height : 4px;
+$sidebar-link-max-width : 250px;
+$sidebar-screen-min-width : 1024px;
+
+/* Cyberpunk theme for the site */
+html[data-theme="cyberpunk"] {
+    --global-base-color : #{$primary-color};
+    --global-bg-color : #{$background};
+    --global-footer-bg-color : #{$background};
+    --global-border-color : #{$background-lighter};
+    --global-dark-border-color : #{$background-light};
+    --global-code-background-color: #01012b;
+    --global-code-text-color : #{$secondary-color};
+    --global-fig-caption-color : #{$gray};
+    --global-link-color : #{$link};
+    --global-link-color-hover : #{$link-light};
+    --global-link-color-visited : #{$link-dark};
+    --global-masthead-link-color : #{$text};
+    --global-masthead-link-color-hover : #{$primary-color};
+    --global-text-color : #{$text};
+    --global-text-color-light : #{$light-gray};
+    --global-thead-color : #{$background-lighter};
+
+    /* Typography - Poppins Font */
+    font-family: 'Poppins', sans-serif;
+
+    /* Main titles use Poppins Black */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .page__title,
+    .archive__item-title,
+    .masthead__menu-item--lg a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        /* Black */
+    }
+
+    /* Description/body text uses Poppins Light */
+    p,
+    .page__content,
+    .archive__item-excerpt,
+    .author__bio,
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        /* Light */
+    }
+
+    /* Cyberpunk gradient for site title (Pink to Cyan) */
+    .masthead__menu-item--lg a {
+        background: linear-gradient(135deg, #ff2a6d 0%, #05d9e8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+    }
+
+    /* Neon glow effect on links */
+    a:hover {
+        text-shadow: 0 0 8px rgba(255, 42, 109, 0.6);
+    }
+}
