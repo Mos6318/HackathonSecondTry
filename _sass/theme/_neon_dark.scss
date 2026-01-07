@@ -1,37 +1,38 @@
 /* ==========================================================================
-    NEON THEME - DARK VERSION
+    NEON THEME - DARK VERSION (VS Code Inspired)
     ========================================================================== */
 
 /* Color codes used for the theme */
-$primary-color : #ff00cc;
-/* Neon Pink */
-$gray : #7a8288;
-$dark-gray : mix(#000, $gray, 40%);
-$darker-gray : mix(#000, $gray, 60%);
-$light-gray : mix(#fff, $gray, 50%);
+$primary-color : #3C83EB;
+/* Bright Blue Accent */
+$gray : #6e7681;
+$dark-gray : #484f58;
+$darker-gray : #32383f;
+$light-gray : #8b949e;
 
-$background : #050505;
-/* Deepest Black */
-$background-light : #1a1a1a;
-$background-lighter : #2a2a2a;
-$text : #ffffff;
-$link : #00ffff;
-/* Cyan */
-$link-dark : mix(#000, $link, 25%);
-$link-light : mix(#fff, $link, 25%);
+$background : #1e1e1e;
+/* VS Code Dark Background */
+$background-light : #252526;
+/* Sidebar */
+$background-lighter : #2d2d30;
+$text : #cccccc;
+/* Light Grey Text */
+$link : #3C83EB;
+/* Bright Blue */
+$link-dark : #2a5db0;
+$link-light : #CEE1EA;
+/* Light Blue Accent */
 
 /* Color codes used for the site */
-$danger-color : #ff0055;
-$info-color : #00ccff;
-$notice-color : #7a8288;
-$success-color : #00ff66;
-/* Neon Green */
-$warning-color : #ffcc00;
+$danger-color : #f85149;
+$info-color : #3C83EB;
+$notice-color : #8b949e;
+$success-color : #56d364;
+$warning-color : #d29922;
 
 /* Other basic settings for the template */
 $border-radius : 4px;
-$box-shadow : 0 0 10px rgba(255, 0, 204, 0.2);
-/* Pink Glow */
+$box-shadow : 0 1px 3px rgba(0, 0, 0, 0.3);
 $global-transition : all 0.2s ease-in-out;
 $masthead-height : 70px;
 $navicon-width : 28px;
@@ -46,16 +47,15 @@ html[data-theme="dark"] {
     --global-footer-bg-color : #{$background};
     --global-border-color : #{$light-gray};
     --global-dark-border-color : #{$background-light};
-    --global-code-background-color: #111111;
-    --global-code-text-color: #00ff66;
-    /* Matrix Green for code */
+    --global-code-background-color: #1f1f1f;
+    --global-code-text-color: #CEE1EA;
     --global-fig-caption-color : #{$light-gray};
     --global-link-color : #{$link};
-    --global-link-color-hover : #{$primary-color};
-    --global-link-color-visited : #{$link-light};
+    --global-link-color-hover : #{$link-light};
+    --global-link-color-visited : #{$link-dark};
     --global-masthead-link-color : #{$text};
     --global-masthead-link-color-hover : #{$primary-color};
     --global-text-color : #{$text};
-    --global-text-color-light: #f3f3f3;
+    --global-text-color-light: #e3e3e3;
     --global-thead-color : #{$background-lighter};
 }
