@@ -1,22 +1,23 @@
 /* ==========================================================================
-    NEON THEME - DARK VERSION (VS Code Inspired)
+    NEON THEME - DARK VERSION (Custom Design)
     ========================================================================== */
 
 /* Color codes used for the theme */
 $primary-color : #3C83EB;
 /* Bright Blue Accent */
-$gray : #6e7681;
-$dark-gray : #484f58;
-$darker-gray : #32383f;
-$light-gray : #8b949e;
+$gray : #747A9C;
+/* Muted blue-grey */
+$dark-gray : #5a5f7a;
+$darker-gray : #3f4357;
+$light-gray : #8b91ab;
 
-$background : #1e1e1e;
-/* VS Code Dark Background */
-$background-light : #252526;
-/* Sidebar */
-$background-lighter : #2d2d30;
-$text : #cccccc;
-/* Light Grey Text */
+$background : #202334;
+/* Dark Navy Background */
+$background-light : #2a2d42;
+/* Slightly lighter */
+$background-lighter : #34384f;
+$text : #747A9C;
+/* Muted blue-grey text */
 $link : #3C83EB;
 /* Bright Blue */
 $link-dark : #2a5db0;
@@ -47,7 +48,7 @@ html[data-theme="dark"] {
     --global-footer-bg-color : #{$background};
     --global-border-color : #{$light-gray};
     --global-dark-border-color : #{$background-light};
-    --global-code-background-color: #1f1f1f;
+    --global-code-background-color: #1a1d2e;
     --global-code-text-color: #CEE1EA;
     --global-fig-caption-color : #{$light-gray};
     --global-link-color : #{$link};
@@ -56,8 +57,37 @@ html[data-theme="dark"] {
     --global-masthead-link-color : #{$text};
     --global-masthead-link-color-hover : #{$primary-color};
     --global-text-color : #{$text};
-    --global-text-color-light: #e3e3e3;
+    --global-text-color-light: #8b91ab;
     --global-thead-color : #{$background-lighter};
+
+    /* Typography - Poppins Font */
+    font-family: 'Poppins', sans-serif;
+
+    /* Main titles use Poppins Black */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .page__title,
+    .archive__item-title,
+    .masthead__menu-item--lg a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        /* Black */
+    }
+
+    /* Description/body text uses Poppins Light */
+    p,
+    .page__content,
+    .archive__item-excerpt,
+    .author__bio,
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        /* Light */
+    }
 
     /* Gradient for site title */
     .masthead__menu-item--lg a {
@@ -65,6 +95,6 @@ html[data-theme="dark"] {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        font-weight: 700;
+        font-weight: 900;
     }
 }
