@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: ""
 permalink: /cv/
 author_profile: false
@@ -145,17 +145,23 @@ SKILLS & INTERESTS
   }
 }
 
-/* Page Layout Fixes - NUCLEAR OPTION */
+/* Page Layout Fixes - Single Layout Override */
 .sidebar {
   display: none !important;
 }
 
-/* Force standard full width on all theme containers so we can control centering ourselves */
-#main,
+/* Force standard full width on theme containers */
+#main {
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  padding: 0 !important;
+}
+
 .page,
 .page__inner-wrap,
-.page__content,
-.archive {
+.page__content {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
@@ -171,6 +177,12 @@ SKILLS & INTERESTS
   margin: 0 auto !important;
   padding: 0 0 !important;
   box-sizing: border-box;
+}
+
+/* Ensure no other theme padding interferes */
+.page__inner-wrap {
+  margin-top: 0 !important;
+  padding-bottom: 2em !important;
 }
 
 .cv-header {
