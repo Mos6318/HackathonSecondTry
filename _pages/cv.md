@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: false
 redirect_from:
@@ -27,10 +27,7 @@ redirect_from:
   </a>
 </div>
 
-<div class="cv-header">
-  <h1>Monika Szuban</h1>
-  <p>Ingolstadt, Germany | <a href="mailto:monika.szuban@gmail.com">monika.szuban@gmail.com</a></p>
-</div>
+
 
 PROFESSIONAL SUMMARY
 ======
@@ -164,9 +161,13 @@ SKILLS & INTERESTS
   width: 100% !important;
   margin-right: 0 !important;
   padding-right: 0 !important;
-  max-width: 1200px;
+  max-width: 1304px;
   margin: 0 auto;
   float: none !important;
+}
+
+.page__title {
+  display: none !important;
 }
 
 /* Ensure FontAwesome icons work and are visible */
