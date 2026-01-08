@@ -151,22 +151,15 @@ Service and leadership
 
 /* Ensure FontAwesome icons work and are visible */
 .floating-social i {
-  font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", "Font Awesome 5 Brands", "Font Awesome 5 Free" !important;
+  /* Using default font-family from theme/CDN */
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
   line-height: 1;
 }
 
-.floating-social .fab {
-  font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
-  font-weight: 400;
-}
-
-.floating-social .fas {
-  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free" !important;
-  font-weight: 900;
-}
+/* Explicitly load Font Awesome 6 if theme fails */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 </style>
 
 <script>
