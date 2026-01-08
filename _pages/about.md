@@ -160,19 +160,20 @@ redirect_from:
 /* Project Card - Asymmetric Layout */
 .project-card {
   display: grid;
-  grid-template-columns: 698px 698px;
-  column-gap: 123px;
+  grid-template-columns: 698px 482px;
+  column-gap: 124px;
   max-width: 1920px;
   width: 100%;
   margin: 0 auto 46px auto;
-  padding: 92px 0;
-  justify-content: center;
+  padding: 92px 290px 92px 276px;
+  justify-content: start;
   align-items: start;
 }
 
 .project-card-reverse {
-  grid-template-columns: 698px 698px;
-  column-gap: 123px;
+  grid-template-columns: 482px 698px;
+  column-gap: 124px;
+  padding: 92px 276px 92px 290px;
 }
 
 /* Project Images */
@@ -192,7 +193,7 @@ redirect_from:
 
 /* Project Content */
 .project-content {
-  width: 698px;
+  width: 482px;
   min-height: 482px;
   display: flex;
   flex-direction: column;
