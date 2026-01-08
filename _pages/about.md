@@ -19,11 +19,66 @@ redirect_from:
 </section>
 
 <section id="projects" class="projects-section">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    {% for post in site.portfolio %}
-      {% include archive-single.html %}
-    {% endfor %}
+  <h2>Featured Projects</h2>
+  
+  <!-- Project 1 -->
+  <div class="project-card">
+    <div class="project-images">
+      <div class="project-image-main">
+        <img src="https://via.placeholder.com/600x400/FF6B35/FFFFFF?text=Project+1" alt="Project 1">
+      </div>
+      <div class="project-image-accent">
+        <img src="https://via.placeholder.com/200x200/FF6B35/FFFFFF?text=Detail" alt="Detail">
+      </div>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Project Title One</h3>
+      <div class="project-divider"></div>
+      <p class="project-description">
+        From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+      </p>
+      <a href="#" class="project-btn">VIEW PROJECT</a>
+    </div>
+  </div>
+
+  <!-- Project 2 (Reversed) -->
+  <div class="project-card project-card-reverse">
+    <div class="project-content">
+      <h3 class="project-title">Project Title Two</h3>
+      <div class="project-divider"></div>
+      <p class="project-description">
+        From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+      </p>
+      <a href="#" class="project-btn">VIEW PROJECT</a>
+    </div>
+    <div class="project-images">
+      <div class="project-image-main">
+        <img src="https://via.placeholder.com/600x400/4ECDC4/FFFFFF?text=Project+2" alt="Project 2">
+      </div>
+      <div class="project-image-accent">
+        <img src="https://via.placeholder.com/200x200/4ECDC4/FFFFFF?text=Detail" alt="Detail">
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-card">
+    <div class="project-images">
+      <div class="project-image-main">
+        <img src="https://via.placeholder.com/600x400/F7B801/FFFFFF?text=Project+3" alt="Project 3">
+      </div>
+      <div class="project-image-accent">
+        <img src="https://via.placeholder.com/200x200/F7B801/FFFFFF?text=Detail" alt="Detail">
+      </div>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">Project Title Three</h3>
+      <div class="project-divider"></div>
+      <p class="project-description">
+        From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+      </p>
+      <a href="#" class="project-btn">VIEW PROJECT</a>
+    </div>
   </div>
 </section>
 
@@ -105,19 +160,135 @@ redirect_from:
 
 /* Projects Section */
 .projects-section {
-  padding: 4rem 2rem;
-  min-height: 100vh;
+  padding: 4rem 0;
+  min-height: auto;
 }
 
 .projects-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
 
-.projects-grid {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Project Card - Asymmetric Layout */
+.project-card {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  min-height: 500px;
+  margin-bottom: 6rem;
+  gap: 0;
+  align-items: center;
+}
+
+.project-card-reverse {
+  grid-template-columns: 40% 60%;
+}
+
+/* Project Images */
+.project-images {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+}
+
+.project-image-main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image-accent {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  border: 4px solid var(--global-bg-color);
+  overflow: hidden;
+}
+
+.project-card-reverse .project-image-accent {
+  left: auto;
+  right: 20px;
+}
+
+.project-image-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Project Content */
+.project-content {
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--global-link-color);
+  margin-bottom: 40px;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 60px;
+  opacity: 0.9;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid var(--global-link-color);
+  color: var(--global-link-color);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.project-btn:hover {
+  background: var(--global-link-color);
+  color: var(--global-bg-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .project-card,
+  .project-card-reverse {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .project-images {
+    min-height: 400px;
+  }
+  
+  .project-content {
+    padding: 40px 30px;
+  }
 }
 
 /* About Section */
