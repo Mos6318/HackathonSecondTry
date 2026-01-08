@@ -100,18 +100,27 @@ SKILLS & INTERESTS
 **Technical Skills:**
 
 <div class="skills-grid">
+  <!-- Design -->
   <img src="https://cdn.simpleicons.org/figma" alt="Figma" title="Figma">
   <img src="https://cdn.simpleicons.org/framer" alt="Framer" title="Framer">
   <img src="https://cdn.simpleicons.org/adobeindesign" alt="InDesign" title="InDesign">
   <img src="https://cdn.simpleicons.org/adobephotoshop" alt="Photoshop" title="Photoshop">
   <img src="https://cdn.simpleicons.org/adobeillustrator" alt="Illustrator" title="Illustrator">
+  <img src="https://cdn.simpleicons.org/adobeaftereffects" alt="After Effects" title="After Effects">
+  
+  <!-- 3D -->
   <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5">
   <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
-  <!-- Spline & Cycles might not have simpleicons, using text fallback or generic where needed, trying generic for now or skipping if strictly logo -->
-  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max" title="3ds Max (Autodesk)"> 
+  <img src="https://cdn.simpleicons.org/adobesubstance3dpainter" alt="Substance Painter" title="Substance Painter">
+  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max (Autodesk)" title="3ds Max">
+  <img src="https://cdn.simpleicons.org/rhinoceros" alt="Rhinoceros 3D" title="Rhinoceros 3D">
+  <img src="https://cdn.simpleicons.org/spline" alt="Spline" title="Spline">
+  
+  <!-- Dev & Office -->
+  <img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code" title="VS Code">
+  <img src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub">
   <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion">
-  <img src="https://cdn.simpleicons.org/microsoftoffice" alt="MS Office" title="MS Office">
-  <img src="https://cdn.simpleicons.org/adobeaftereffects" alt="After Effects" title="After Effects">
+  <img src="https://cdn.simpleicons.org/microsoft365" alt="MS Office" title="MS Office">
 </div>
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
