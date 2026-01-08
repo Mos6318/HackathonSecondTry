@@ -171,7 +171,6 @@ Service and leadership
 .greedy-nav .visible-links li {
   display: inline-block !important;
   vertical-align: middle;
-  font-size: 0.5rem;
 }
 
 .greedy-nav .visible-links li:first-child {
