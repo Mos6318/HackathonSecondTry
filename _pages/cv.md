@@ -172,25 +172,17 @@ SKILLS & INTERESTS
 
 /* Custom Content Wrapper - Controlled Centering */
 .cv-content-wrapper {
-  max-width: 1000px !important;
+  max-width: 900px !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding: 0 0 !important;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; /* Ensure cleaner font */
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem; /* Reduced normal text size */
 }
 
-/* Prettier Styling */
-.cv-content-wrapper h1 {
-  color: #ff0055; /* Neon Pink to match theme */
-  border-bottom: 2px solid #ff0055;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
+/* Prettier Styling - Reverted Headers to Default */
+/* Removed custom H1 neon styling as requested */
 
 .cv-content-wrapper ul {
   margin-left: 1.5rem;
