@@ -166,6 +166,46 @@ Service and leadership
     display: none;
   }
 }
+
+/* Page Layout Fixes */
+.sidebar {
+  display: none !important;
+}
+
+.page__content {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.archive {
+  width: 100% !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  max-width: 1200px; /* Limit readability width */
+  margin: 0 auto;
+}
+
+/* Ensure FontAwesome icons work and are visible */
+.floating-social i {
+  font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free" !important;
+  font-weight: 900;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.floating-social .fab {
+  font-family: "Font Awesome 5 Brands" !important;
+}
+
+.floating-social .fas {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900;
+}
 </style>
 
 <script>
