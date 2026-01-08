@@ -190,8 +190,6 @@
   }
 
   button {
-    display: none !important;
-    /* Hide hamburger menu */
     position: absolute;
     height: 2.5rem;
     right: 0;
@@ -205,20 +203,15 @@
   }
 
   .visible-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    display: table;
 
     li {
-      display: inline-block;
+      display: table-cell;
       vertical-align: middle;
 
       &:first-child {
         font-weight: bold;
         text-wrap: wrap;
-        margin-right: auto;
-        order: -1;
 
         a {
           margin-left: 0;
@@ -226,8 +219,6 @@
       }
 
       &:last-child {
-        margin-left: auto;
-
         a {
           margin-right: 0;
         }
