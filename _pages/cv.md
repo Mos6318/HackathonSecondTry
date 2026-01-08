@@ -10,7 +10,6 @@ redirect_from:
 {% include base_path %}
 
 <div class="floating-social">
-  <div class="vertical-line"></div>
   <a href="https://github.com/Mos6318" target="_blank" rel="noopener" title="GitHub">
     <i class="fab fa-github"></i>
   </a>
@@ -83,82 +82,37 @@ Service and leadership
 * Currently signed in to 43 different slack teams
 
 <style>
-/* Floating Social Links */
+/* Floating Social Links - Matching Home Page */
 .floating-social {
   position: fixed;
-  right: 40px;
-  bottom: 0;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 1rem;
   z-index: 100;
-  padding-bottom: 40px;
 }
 
 .floating-social a {
-  color: var(--global-text-color);
-  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--global-bg-color);
+  border: 2px solid var(--global-link-color);
+  border-radius: 50%;
+  color: var(--global-link-color);
+  text-decoration: none;
   transition: all 0.3s ease;
-  opacity: 0.6;
+  font-size: 1.2rem;
 }
 
 .floating-social a:hover {
-  color: var(--global-link-color);
-  transform: translateY(-3px);
-  opacity: 1;
-}
-
-.floating-social .vertical-line {
-  width: 1px;
-  height: 100px;
-  background-color: var(--global-text-color);
-  opacity: 0.3;
-  margin-bottom: 20px;
-}
-
-/* Custom Navigation Layout */
-.greedy-nav .visible-links {
-  display: flex !important;
-  align-items: center;
-  width: 100%;
-}
-
-.greedy-nav .visible-links li {
-  display: inline-block !important;
-  vertical-align: middle;
-}
-
-.greedy-nav .visible-links li:first-child {
-  margin-right: auto;
-}
-
-.greedy-nav .visible-links li:not(:first-child):not(#theme-toggle) {
-  margin: 0 1rem;
-}
-
-.greedy-nav .visible-links #theme-toggle {
-  margin-left: auto;
-}
-
-/* Restore navigation bar padding */
-.masthead__inner-wrap {
-  padding: 0.5em 1em !important;
-}
-
-/* Hide burger menu button */
-.greedy-nav button {
-  display: none !important;
-}
-
-/* Ensure hidden-links don't interfere */
-.greedy-nav .hidden-links {
-  display: none !important;
-}
-
-/* Force all navigation items to stay visible */
-.greedy-nav .visible-links li[style*="display: none"] {
-  display: inline-block !important;
+  background: var(--global-link-color);
+  color: var(--global-bg-color);
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -172,19 +126,27 @@ Service and leadership
   display: none !important;
 }
 
+#main {
+  margin-left: 0 !important;
+  display: flex;
+  justify-content: center;
+}
+
 .page__content {
   width: 100% !important;
   max-width: 100% !important;
   margin-right: 0 !important;
   padding-right: 0 !important;
+  float: none !important;
 }
 
 .archive {
   width: 100% !important;
   margin-right: 0 !important;
   padding-right: 0 !important;
-  max-width: 1200px; /* Limit readability width */
+  max-width: 1200px;
   margin: 0 auto;
+  float: none !important;
 }
 
 /* Ensure FontAwesome icons work and are visible */
