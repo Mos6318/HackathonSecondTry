@@ -24,7 +24,7 @@ redirect_from:
   <!-- Project 1 -->
   <div class="project-card">
     <div class="project-images">
-      <img src="https://via.placeholder.com/500x500/FF6B35/FFFFFF?text=Project+1" alt="Project 1">
+      <img src="/HackathonSecondTry/assets/images/Placeholder.png" alt="Project 1">
     </div>
     <div class="project-content">
       <h3 class="project-title">Project Title One</h3>
@@ -47,14 +47,14 @@ redirect_from:
       <a href="#" class="project-btn">VIEW PROJECT</a>
     </div>
     <div class="project-images">
-      <img src="https://via.placeholder.com/500x500/4ECDC4/FFFFFF?text=Project+2" alt="Project 2">
+      <img src="/HackathonSecondTry/assets/images/Placeholder.png" alt="Project 2">
     </div>
   </div>
 
   <!-- Project 3 -->
   <div class="project-card">
     <div class="project-images">
-      <img src="https://via.placeholder.com/500x500/F7B801/FFFFFF?text=Project+3" alt="Project 3">
+      <img src="/HackathonSecondTry/assets/images/Placeholder.png" alt="Project 3">
     </div>
     <div class="project-content">
       <h3 class="project-title">Project Title Three</h3>
