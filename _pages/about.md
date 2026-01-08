@@ -397,4 +397,36 @@ section {
 .greedy-nav .hidden-links {
   display: none !important;
 }
+
+/* Force all navigation items to stay visible */
+.greedy-nav .visible-links li[style*="display: none"] {
+  display: inline-block !important;
+}
 </style>
+
+<script>
+// Disable greedy navigation behavior - keep all items visible
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove any inline styles that hide navigation items
+  const navItems = document.querySelectorAll('.greedy-nav .visible-links li');
+  navItems.forEach(item => {
+    item.style.display = 'inline-block';
+  });
+  
+  // Disable the greedy nav resize observer if it exists
+  if (window.ResizeObserver) {
+    const originalResizeObserver = window.ResizeObserver;
+    window.ResizeObserver = function(callback) {
+      return new originalResizeObserver(function(entries, observer) {
+        // Don't call the callback for greedy-nav elements
+        const filteredEntries = entries.filter(entry => {
+          return !entry.target.classList.contains('greedy-nav');
+        });
+        if (filteredEntries.length > 0) {
+          callback(filteredEntries, observer);
+        }
+      });
+    };
+  }
+});
+</script>
