@@ -98,9 +98,21 @@ PROJECTS & ACHIEVEMENTS
 SKILLS & INTERESTS
 ======
 **Technical Skills:**
-* **Design & Proto:** Figma, Framer, InDesign, Photoshop, Illustrator
-* **3D & Game Engine:** Unreal Engine 5, Blender, Spline, Substance Painter, 3ds Max, Rhinoceros 4, Cycles
-* **Other:** Notion, MS Office Suite, After Effects, SolidWorks
+
+<div class="skills-grid">
+  <img src="https://cdn.simpleicons.org/figma" alt="Figma" title="Figma">
+  <img src="https://cdn.simpleicons.org/framer" alt="Framer" title="Framer">
+  <img src="https://cdn.simpleicons.org/adobeindesign" alt="InDesign" title="InDesign">
+  <img src="https://cdn.simpleicons.org/adobephotoshop" alt="Photoshop" title="Photoshop">
+  <img src="https://cdn.simpleicons.org/adobeillustrator" alt="Illustrator" title="Illustrator">
+  <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5">
+  <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
+  <!-- Spline & Cycles might not have simpleicons, using text fallback or generic where needed, trying generic for now or skipping if strictly logo -->
+  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max" title="3ds Max (Autodesk)"> 
+  <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion">
+  <img src="https://cdn.simpleicons.org/microsoftoffice" alt="MS Office" title="MS Office">
+  <img src="https://cdn.simpleicons.org/adobeaftereffects" alt="After Effects" title="After Effects">
+</div>
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
 </div>
@@ -181,8 +193,15 @@ SKILLS & INTERESTS
   font-size: 0.9rem; /* Reduced normal text size */
 }
 
-/* Prettier Styling - Reverted Headers to Default */
-/* Removed custom H1 neon styling as requested */
+/* Typography & Spacing Updates */
+.cv-content-wrapper h1 {
+  margin-top: 4rem; /* Increased spacing as requested */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--global-border-color); /* Subtle divider */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 .cv-content-wrapper ul {
   margin-left: 1.5rem;
@@ -196,6 +215,32 @@ SKILLS & INTERESTS
 .cv-content-wrapper p {
   line-height: 1.8;
   margin-bottom: 1.5rem;
+}
+
+/* Skills Grid Styling */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.skills-grid img {
+  width: 100%;
+  max-width: 48px; /* Icon size */
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%); /* Optional: clean look, color on hover */
+  opacity: 0.7;
+}
+
+.skills-grid img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* Header link styling */
