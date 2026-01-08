@@ -29,10 +29,10 @@ redirect_from:
   <!-- Project 1 -->
   <div class="project-card">
     <div class="project-images">
-      <img src="/HackathonSecondTry/assets/images/Placeholder.png" alt="Project 1">
+      <img src="/HackathonSecondTry/assets/images/CDSInc.png" alt="CDSInc">
     </div>
     <div class="project-content">
-      <h3 class="project-title">Project Title One</h3>
+      <h3 class="project-title">CDSInc</h3>
       <div class="project-divider"></div>
       <p class="project-description">
         From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
@@ -44,7 +44,7 @@ redirect_from:
   <!-- Project 2 (Reversed) -->
   <div class="project-card project-card-reverse">
     <div class="project-content">
-      <h3 class="project-title">Project Title Two</h3>
+      <h3 class="project-title">Echo Drive</h3>
       <div class="project-divider"></div>
       <p class="project-description">
         From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
@@ -52,17 +52,17 @@ redirect_from:
       <a href="#" class="project-btn">VIEW PROJECT</a>
     </div>
     <div class="project-images">
-      <img src="/HackathonSecondTry/assets/images/Placeholder.png" alt="Project 2">
+      <img src="/HackathonSecondTry/assets/images/Echo_drive.png" alt="Echo Drive">
     </div>
   </div>
 
   <!-- Project 3 -->
   <div class="project-card">
     <div class="project-images">
-      <img src="/HackathonSecondTry/assets/images/Placeholder.png" alt="Project 3">
+      <img src="/HackathonSecondTry/assets/images/Grannify.png" alt="Grannify">
     </div>
     <div class="project-content">
-      <h3 class="project-title">Project Title Three</h3>
+      <h3 class="project-title">Grannify</h3>
       <div class="project-divider"></div>
       <p class="project-description">
         From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
