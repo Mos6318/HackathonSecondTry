@@ -160,41 +160,46 @@ redirect_from:
 /* Project Card - Asymmetric Layout */
 .project-card {
   display: grid;
-  grid-template-columns: 40% 60%;
-  min-height: 500px;
-  margin-bottom: 6rem;
+  grid-template-columns: 698px 123px 698px;
+  max-width: 1920px;
+  margin: 0 auto 92px auto;
+  padding: 92px 276px 92px 276px;
   gap: 0;
-  align-items: center;
+  align-items: start;
 }
 
 .project-card-reverse {
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 698px 123px 698px;
+  padding: 92px 290px 92px 276px;
 }
 
 /* Project Images */
 .project-images {
-  width: 100%;
-  height: 500px;
+  width: 698px;
+  height: 608.53px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
 }
 
 .project-images img {
   width: 100%;
-  max-width: 500px;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
 }
 
 /* Project Content */
 .project-content {
-  padding: 80px 60px;
+  width: 698px;
+  min-height: 482px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  padding-top: 84px;
+}
+
+.project-card-reverse .project-content {
+  order: -1;
 }
 
 .project-title {
