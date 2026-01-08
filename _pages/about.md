@@ -15,8 +15,8 @@ redirect_from:
       Welcome to my digital portfolio. Here you'll find a collection of my latest projects, demonstrating my passion for building immersive and user-centric digital experiences. Explore my work and get to know the person behind the code.
     </p>
     <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="/cv/" class="btn btn-secondary">Download CV</a>
+      <a href="#projects" class="hero-btn">View Projects</a>
+      <a href="/cv/" class="hero-btn">Download CV</a>
     </div>
     <!-- Placeholder for future AI Hero Image -->
     <div class="hero-image-placeholder"></div>
@@ -75,10 +75,7 @@ redirect_from:
 <section id="about" class="about-section">
   <h2>About Me</h2>
   <div class="about-content">
-    <p>Welcome to my portfolio! I'm a UX Designer passionate about creating engaging experiences for the gaming industry.</p>
-    
-    <h3>What I Do</h3>
-    <p>I specialize in user experience design, focusing on creating intuitive and engaging interfaces that enhance player experiences.</p>
+    <p>I’m Monika, a passionate Creative Designer with a background in industrial and user experience design. I focus on crafting intuitive, user-centered digital experiences that are visually engaging and purpose-driven, with the goal of solving real problems and creating lasting impact.</p>
     
     <h3>Get In Touch</h3>
     <p>Interested in working together? Feel free to reach out through any of the social links in the sidebar, or check out my full CV for more details about my experience and skills.</p>
@@ -127,7 +124,8 @@ redirect_from:
   flex-wrap: wrap;
 }
 
-.btn {
+.hero-btn {
+  display: inline-block;
   padding: 12px 30px;
   border: 2px solid var(--global-link-color);
   color: var(--global-link-color);
@@ -137,9 +135,10 @@ redirect_from:
   letter-spacing: 1px;
   transition: all 0.3s ease;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
-.btn:hover {
+.hero-btn:hover {
   background: var(--global-link-color);
   color: var(--global-bg-color);
   transform: translateY(-2px);
