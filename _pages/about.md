@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Monika Szuban"
-author_profile: true
+author_profile: false
 redirect_from: 
   - /about/
   - /about.html
@@ -143,6 +143,46 @@ redirect_from:
   margin-bottom: 1rem;
 }
 
+/* Floating Social Links */
+.floating-social {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.floating-social a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--global-bg-color);
+  border: 2px solid var(--global-link-color);
+  border-radius: 50%;
+  color: var(--global-link-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.floating-social a:hover {
+  background: var(--global-link-color);
+  color: var(--global-bg-color);
+  transform: scale(1.1);
+}
+
+/* Hide floating social on mobile */
+@media (max-width: 768px) {
+  .floating-social {
+    display: none;
+  }
+}
+
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
@@ -152,3 +192,22 @@ section {
   scroll-margin-top: 70px; /* Account for fixed header */
 }
 </style>
+
+<!-- Floating Social Links -->
+<div class="floating-social">
+  <a href="https://github.com/academicpages" target="_blank" rel="noopener" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://orcid.org/yourorcidurl" target="_blank" rel="noopener" title="ORCID">
+    <i class="fab fa-orcid"></i>
+  </a>
+  <a href="mailto:none@example.org" title="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://behance.net/yourprofile" target="_blank" rel="noopener" title="Behance">
+    <i class="fab fa-behance"></i>
+  </a>
+</div>
