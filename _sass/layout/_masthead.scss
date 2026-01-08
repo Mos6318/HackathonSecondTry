@@ -4,7 +4,7 @@
 
 .masthead {
   position: fixed;
-  background: rgba(var(--global-bg-color-rgb), 0.7);
+  background: rgba(32, 35, 52, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   height: fit-content;
@@ -12,9 +12,9 @@
   width: 100%;
 
   -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
+  animation: intro 0.3s both;
   -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  animation-delay: 0.15s;
   z-index: 20;
 
   /* Remove bottom border line */
@@ -27,9 +27,6 @@
     @include clearfix;
     padding: 0.5em 2em;
     font-family: $sans-serif-narrow;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -37,9 +34,6 @@
 
     nav {
       z-index: 10;
-      flex: 1;
-      display: flex;
-      justify-content: center;
     }
 
     a {
@@ -57,6 +51,7 @@
     list-style-type: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
   }
 }
@@ -68,14 +63,13 @@
   white-space: nowrap;
 
   &--lg {
-    position: absolute;
-    left: 2em;
+    margin-right: auto;
+    order: -1;
     font-weight: 700;
   }
-  
+
   &.tail {
-    position: absolute;
-    right: 2em;
+    margin-left: auto;
   }
 }
 
