@@ -29,6 +29,12 @@ redirect_from:
 
 
 
+<div class="cv-content-wrapper">
+<div class="cv-header">
+  <h1>Monika Szuban</h1>
+  <p>Ingolstadt, Germany | <a href="mailto:monika.szuban@gmail.com">monika.szuban@gmail.com</a></p>
+</div>
+
 PROFESSIONAL SUMMARY
 ======
 As a Master's student in User Experience Design at Technische Hochschule Ingolstadt, with a background in Product Design and Visual Communication, I am developing strong skills in UX research, interaction design, and user-centered methodologies. My foundation in branding, product, and visual design allows me to create holistic experiences that balance usability with aesthetics. I am passionate about understanding user needs, designing intuitive interfaces, and contributing to projects that drive meaningful interaction. I am EU citizen with full time work rights.
@@ -97,6 +103,7 @@ SKILLS & INTERESTS
 * **Other:** Notion, MS Office Suite, After Effects, SolidWorks
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
+</div>
 
 <style>
 /* Floating Social Links - Matching Home Page */
@@ -138,28 +145,36 @@ SKILLS & INTERESTS
   }
 }
 
-/* Page Layout Fixes */
+/* Page Layout Fixes - NUCLEAR OPTION */
 .sidebar {
   display: none !important;
 }
 
-#main {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block !important;
-}
-
+/* Force standard full width on all theme containers so we can control centering ourselves */
+#main,
+.page,
+.page__inner-wrap,
 .page__content,
 .archive {
   width: 100% !important;
-  max-width: 1304px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
   float: none !important;
-  padding-right: 0 !important;
-  padding-left: 0 !important;
+}
+
+/* Custom Content Wrapper - Controlled Centering */
+.cv-content-wrapper {
+  max-width: 1304px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 0 !important;
+  box-sizing: border-box;
+}
+
+.cv-header {
+  display: none; /* Keep header hidden as requested */
 }
 
 .page__title {
