@@ -366,6 +366,11 @@ section {
   width: 100%;
 }
 
+.greedy-nav .visible-links li {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
 .greedy-nav .visible-links li:first-child {
   margin-right: auto;
 }
@@ -378,8 +383,18 @@ section {
   margin-left: auto;
 }
 
+/* Restore navigation bar padding */
+.masthead__inner-wrap {
+  padding: 0.5em 1em !important;
+}
+
 /* Hide burger menu button */
 .greedy-nav button {
+  display: none !important;
+}
+
+/* Ensure hidden-links don't interfere */
+.greedy-nav .hidden-links {
   display: none !important;
 }
 </style>
