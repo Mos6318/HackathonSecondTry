@@ -115,31 +115,20 @@ redirect_from:
 }
 
 .btn {
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: var(--global-link-color);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--global-link-color-hover);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
+  padding: 12px 30px;
   border: 2px solid var(--global-link-color);
   color: var(--global-link-color);
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.btn-secondary:hover {
+.btn:hover {
   background: var(--global-link-color);
-  color: white;
+  color: var(--global-bg-color);
   transform: translateY(-2px);
 }
 
