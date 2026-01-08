@@ -29,7 +29,7 @@ redirect_from:
 
 
 
-<div class="cv-content-wrapper">
+<div class="cv-content-wrapper" markdown="1">
 <div class="cv-header">
   <h1>Monika Szuban</h1>
   <p>Ingolstadt, Germany | <a href="mailto:monika.szuban@gmail.com">monika.szuban@gmail.com</a></p>
