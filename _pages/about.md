@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Monika Szuban"
+title: "<3"
 author_profile: false
 redirect_from: 
   - /about/
@@ -9,7 +9,7 @@ redirect_from:
 
 <section id="home" class="hero-section">
   <div class="hero-content">
-    <h1 class="hero-title">Monika Szuban</h1>
+    <h1 class="hero-title">Lily</h1>
     <p class="hero-tagline">UX Designer crafting experiences for gaming studios</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
