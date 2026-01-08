@@ -172,11 +172,50 @@ SKILLS & INTERESTS
 
 /* Custom Content Wrapper - Controlled Centering */
 .cv-content-wrapper {
-  max-width: 1304px !important;
+  max-width: 1000px !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding: 0 0 !important;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Ensure cleaner font */
+}
+
+/* Prettier Styling */
+.cv-content-wrapper h1 {
+  color: #ff0055; /* Neon Pink to match theme */
+  border-bottom: 2px solid #ff0055;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cv-content-wrapper ul {
+  margin-left: 1.5rem;
+}
+
+.cv-content-wrapper li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.cv-content-wrapper p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Header link styling */
+.cv-content-wrapper a {
+  color: #00f3ff; /* Neon Cyan for links */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cv-content-wrapper a:hover {
+  text-decoration: underline;
+  color: #ff0055;
 }
 
 /* Ensure no other theme padding interferes */
