@@ -160,6 +160,51 @@ Service and leadership
 
 /* Explicitly load Font Awesome 6 if theme fails */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+/* Custom Navigation Layout */
+.greedy-nav .visible-links {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+}
+
+.greedy-nav .visible-links li {
+  display: inline-block !important;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+.greedy-nav .visible-links li:first-child {
+  margin-right: auto;
+}
+
+.greedy-nav .visible-links li:not(:first-child):not(#theme-toggle) {
+  margin: 0 1rem;
+}
+
+.greedy-nav .visible-links #theme-toggle {
+  margin-left: auto;
+}
+
+/* Restore navigation bar padding */
+.masthead__inner-wrap {
+  padding: 0.5em 1em !important;
+}
+
+/* Hide burger menu button */
+.greedy-nav button {
+  display: none !important;
+}
+
+/* Ensure hidden-links don't interfere */
+.greedy-nav .hidden-links {
+  display: none !important;
+}
+
+/* Force all navigation items to stay visible */
+.greedy-nav .visible-links li[style*="display: none"] {
+  display: inline-block !important;
+}
 </style>
 
 <script>
