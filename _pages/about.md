@@ -165,15 +165,15 @@ redirect_from:
   max-width: 1920px;
   width: 100%;
   margin: 0 auto 46px auto;
-  padding: 92px 290px 92px 276px;
-  justify-content: start;
+  padding: 92px 0;
+  justify-content: center;
   align-items: start;
 }
 
 .project-card-reverse {
   grid-template-columns: 482px 698px;
   column-gap: 124px;
-  padding: 92px 276px 92px 290px;
+  padding: 92px 0;
 }
 
 /* Project Images */
