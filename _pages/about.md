@@ -358,7 +358,7 @@ section {
 .greedy-nav .visible-links li {
   display: inline-block !important;
   vertical-align: middle;
-  font-size: 1.5rem;
+  font-size: 0.5rem;
 }
 
 .greedy-nav .visible-links li:first-child {
