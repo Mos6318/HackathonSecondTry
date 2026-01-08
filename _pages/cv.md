@@ -145,25 +145,21 @@ SKILLS & INTERESTS
 
 #main {
   margin-left: 0 !important;
-  display: flex;
-  justify-content: center;
-}
-
-.page__content {
+  margin-right: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-  float: none !important;
+  display: block !important;
 }
 
+.page__content,
 .archive {
   width: 100% !important;
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-  max-width: 1304px;
-  margin: 0 auto;
+  max-width: 1304px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   float: none !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 .page__title {
