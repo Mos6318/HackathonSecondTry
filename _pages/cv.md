@@ -151,9 +151,7 @@ Service and leadership
 
 /* Ensure FontAwesome icons work and are visible */
 .floating-social i {
-  font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free" !important;
-  font-weight: 900;
-  display: inline-block;
+  font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free", "Font Awesome 5 Brands", "Font Awesome 5 Free" !important;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -161,11 +159,12 @@ Service and leadership
 }
 
 .floating-social .fab {
-  font-family: "Font Awesome 5 Brands" !important;
+  font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands" !important;
+  font-weight: 400;
 }
 
 .floating-social .fas {
-  font-family: "Font Awesome 5 Free" !important;
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free" !important;
   font-weight: 900;
 }
 </style>
