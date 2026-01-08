@@ -165,7 +165,7 @@ redirect_from:
   max-width: 1920px;
   width: 100%;
   margin: 0 auto 0 auto;
-  padding: 92px 0;
+  padding: 62px 0;
   justify-content: center;
   align-items: start;
 }
@@ -173,7 +173,7 @@ redirect_from:
 .project-card-reverse {
   grid-template-columns: 482px 698px;
   column-gap: 124px;
-  padding: 92px 0;
+  padding: 62px 0;
 }
 
 /* Project Images */
