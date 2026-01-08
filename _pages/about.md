@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "<3"
+title: ""
 author_profile: false
 redirect_from: 
   - /about/
@@ -357,3 +357,29 @@ section {
     <i class="fab fa-behance"></i>
   </a>
 </div>
+
+<style>
+/* Custom Navigation Layout */
+.greedy-nav .visible-links {
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+}
+
+.greedy-nav .visible-links li:first-child {
+  margin-right: auto;
+}
+
+.greedy-nav .visible-links li:not(:first-child):not(#theme-toggle) {
+  margin: 0 1rem;
+}
+
+.greedy-nav .visible-links #theme-toggle {
+  margin-left: auto;
+}
+
+/* Hide burger menu button */
+.greedy-nav button {
+  display: none !important;
+}
+</style>
