@@ -179,6 +179,7 @@ Service and leadership
 
 .greedy-nav .visible-links li:not(:first-child):not(#theme-toggle) {
   margin: 0 1rem;
+  font-size: 0.9rem;
 }
 
 .greedy-nav .visible-links #theme-toggle {
