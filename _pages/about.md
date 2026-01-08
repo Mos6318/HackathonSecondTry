@@ -10,11 +10,16 @@ redirect_from:
 <section id="home" class="hero-section">
   <div class="hero-content">
     <h1 class="hero-title">Lily</h1>
-    <p class="hero-tagline">UX Designer crafting experiences for gaming studios</p>
+    <p class="hero-tagline">Where creativity meets purpose and impact.</p>
+    <p class="hero-welcome">
+      Welcome to my digital portfolio. Here you'll find a collection of my latest projects, demonstrating my passion for building immersive and user-centric digital experiences. Explore my work and get to know the person behind the code.
+    </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="/cv/" class="btn btn-secondary">Download CV</a>
     </div>
+    <!-- Placeholder for future AI Hero Image -->
+    <div class="hero-image-placeholder"></div>
   </div>
 </section>
 
@@ -103,8 +108,16 @@ redirect_from:
 
 .hero-tagline {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   opacity: 0.9;
+}
+
+.hero-welcome {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
 .hero-cta {
