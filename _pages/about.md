@@ -24,12 +24,7 @@ redirect_from:
   <!-- Project 1 -->
   <div class="project-card">
     <div class="project-images">
-      <div class="project-image-main">
-        <img src="https://via.placeholder.com/600x400/FF6B35/FFFFFF?text=Project+1" alt="Project 1">
-      </div>
-      <div class="project-image-accent">
-        <img src="https://via.placeholder.com/200x200/FF6B35/FFFFFF?text=Detail" alt="Detail">
-      </div>
+      <img src="https://via.placeholder.com/500x500/FF6B35/FFFFFF?text=Project+1" alt="Project 1">
     </div>
     <div class="project-content">
       <h3 class="project-title">Project Title One</h3>
@@ -52,24 +47,14 @@ redirect_from:
       <a href="#" class="project-btn">VIEW PROJECT</a>
     </div>
     <div class="project-images">
-      <div class="project-image-main">
-        <img src="https://via.placeholder.com/600x400/4ECDC4/FFFFFF?text=Project+2" alt="Project 2">
-      </div>
-      <div class="project-image-accent">
-        <img src="https://via.placeholder.com/200x200/4ECDC4/FFFFFF?text=Detail" alt="Detail">
-      </div>
+      <img src="https://via.placeholder.com/500x500/4ECDC4/FFFFFF?text=Project+2" alt="Project 2">
     </div>
   </div>
 
   <!-- Project 3 -->
   <div class="project-card">
     <div class="project-images">
-      <div class="project-image-main">
-        <img src="https://via.placeholder.com/600x400/F7B801/FFFFFF?text=Project+3" alt="Project 3">
-      </div>
-      <div class="project-image-accent">
-        <img src="https://via.placeholder.com/200x200/F7B801/FFFFFF?text=Detail" alt="Detail">
-      </div>
+      <img src="https://via.placeholder.com/500x500/F7B801/FFFFFF?text=Project+3" alt="Project 3">
     </div>
     <div class="project-content">
       <h3 class="project-title">Project Title Three</h3>
@@ -162,6 +147,8 @@ redirect_from:
 .projects-section {
   padding: 4rem 0;
   min-height: auto;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .projects-section h2 {
@@ -173,7 +160,7 @@ redirect_from:
 /* Project Card - Asymmetric Layout */
 .project-card {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 40% 60%;
   min-height: 500px;
   margin-bottom: 6rem;
   gap: 0;
@@ -181,46 +168,23 @@ redirect_from:
 }
 
 .project-card-reverse {
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 60% 40%;
 }
 
 /* Project Images */
 .project-images {
-  position: relative;
-  height: 100%;
-  min-height: 500px;
-}
-
-.project-image-main {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.project-image-main img {
+.project-images img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-image-accent {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 200px;
-  height: 200px;
-  border: 4px solid var(--global-bg-color);
-  overflow: hidden;
-}
-
-.project-card-reverse .project-image-accent {
-  left: auto;
-  right: 20px;
-}
-
-.project-image-accent img {
-  width: 100%;
-  height: 100%;
+  max-width: 500px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -266,6 +230,7 @@ redirect_from:
   letter-spacing: 1px;
   transition: all 0.3s ease;
   align-self: flex-start;
+  white-space: nowrap;
 }
 
 .project-btn:hover {
@@ -295,6 +260,8 @@ redirect_from:
 .about-section {
   padding: 4rem 2rem;
   min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .about-section h2 {
