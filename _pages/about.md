@@ -160,17 +160,19 @@ redirect_from:
 /* Project Card - Asymmetric Layout */
 .project-card {
   display: grid;
-  grid-template-columns: 698px 123px 698px;
+  grid-template-columns: 698px 698px;
+  column-gap: 123px;
   max-width: 1920px;
+  width: 100%;
   margin: 0 auto 92px auto;
-  padding: 92px 276px 92px 276px;
-  gap: 0;
+  padding: 92px 0;
+  justify-content: center;
   align-items: start;
 }
 
 .project-card-reverse {
-  grid-template-columns: 698px 123px 698px;
-  padding: 92px 290px 92px 276px;
+  grid-template-columns: 698px 698px;
+  column-gap: 123px;
 }
 
 /* Project Images */
