@@ -153,7 +153,7 @@ redirect_from:
 
 .projects-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -164,7 +164,7 @@ redirect_from:
   column-gap: 124px;
   max-width: 1920px;
   width: 100%;
-  margin: 0 auto 46px auto;
+  margin: 0 auto 23px auto;
   padding: 92px 0;
   justify-content: center;
   align-items: start;
