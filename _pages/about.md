@@ -16,7 +16,7 @@ redirect_from:
     </p>
     <div class="hero-cta">
       <a href="#projects" class="hero-btn">View Projects</a>
-      <a href="/cv/" class="hero-btn">Download CV</a>
+      <a href="{{ site.baseurl }}/assets/images/monika_szuban_cv.pdf" class="hero-btn" download>Download CV</a>
     </div>
     <!-- Placeholder for future AI Hero Image -->
     <div class="hero-image-placeholder"></div>
@@ -27,7 +27,7 @@ redirect_from:
   <h2>Featured Projects</h2>
   
   <!-- Project 1 -->
-  <div class="project-card">
+  <div id="project-1" class="project-card">
     <div class="project-images">
       <img src="/HackathonSecondTry/assets/images/CDSInc.png" alt="CDSInc">
     </div>
@@ -42,7 +42,7 @@ redirect_from:
   </div>
 
   <!-- Project 2 (Reversed) -->
-  <div class="project-card project-card-reverse">
+  <div id="project-2" class="project-card project-card-reverse">
     <div class="project-content">
       <h3 class="project-title">Echo Drive</h3>
       <div class="project-divider"></div>
@@ -57,7 +57,7 @@ redirect_from:
   </div>
 
   <!-- Project 3 -->
-  <div class="project-card">
+  <div id="project-3" class="project-card">
     <div class="project-images">
       <img src="/HackathonSecondTry/assets/images/Grannify.png" alt="Grannify">
     </div>
@@ -191,6 +191,11 @@ redirect_from:
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.project-images img:hover {
+  transform: scale(1.02); /* Subtle zoom on hover */
 }
 
 /* Project Content */
@@ -408,8 +413,42 @@ section {
 </style>
 
 <script>
-// Disable greedy navigation behavior - keep all items visible
+// Custom Center-Scrolling Logic
 document.addEventListener('DOMContentLoaded', function() {
+  
+  // 1. Select all hash links (internal navigation)
+  const links = document.querySelectorAll('a[href^="#"]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Only intervene if it's a valid ID on this page
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const target = document.querySelector(targetId);
+      
+      if (target) {
+        e.preventDefault(); // Stop default jump
+        
+        // Calculate Center Position
+        // Element Top + Half Height - Half Viewport Height
+        const elementCenter = target.offsetTop + (target.offsetHeight / 2);
+        const viewportCenter = window.innerHeight / 2;
+        const scrollPos = elementCenter - viewportCenter;
+        
+        // Execute Smooth Scroll
+        window.scrollTo({
+          top: scrollPos,
+          behavior: 'smooth'
+        });
+        
+        // Optional: Update URL without jumping
+        history.pushState(null, null, targetId);
+      }
+    });
+  });
+
+  // Disable greedy navigation behavior - keep all items visible
   // Remove any inline styles that hide navigation items
   const navItems = document.querySelectorAll('.greedy-nav .visible-links li');
   navItems.forEach(item => {
