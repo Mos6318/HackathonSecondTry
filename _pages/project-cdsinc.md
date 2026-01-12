@@ -240,10 +240,6 @@ author_profile: false
 <!-- Metadata -->
 <div class="project-meta-detailed">
   <div class="meta-block">
-    <span class="meta-label">Authors:</span><br>
-    Monika Szuban, Vanessa Scherer, Hannah Müller
-  </div>
-  <div class="meta-block" style="margin-top: 1rem;">
     <span class="meta-label">Institution:</span><br>
     Technische Hochschule Ingolstadt
   </div>
