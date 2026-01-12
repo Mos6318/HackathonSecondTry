@@ -194,8 +194,19 @@ redirect_from:
   transition: transform 0.3s ease; /* Smooth zoom transition */
 }
 
-.project-images img:hover {
-  transform: scale(1.02); /* Subtle zoom on hover */
+/* Hover Effects */
+.project-card, .project-card-reverse {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .project-card-reverse:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-card:hover .project-images img, 
+.project-card-reverse:hover .project-images img {
+  transform: scale(1.02);
 }
 
 /* Project Content */
@@ -413,41 +424,8 @@ section {
 </style>
 
 <script>
-// Custom Center-Scrolling Logic
+// Disable greedy navigation behavior - keep all items visible
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // 1. Select all hash links (internal navigation)
-  const links = document.querySelectorAll('a[href^="#"]');
-  
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      // Only intervene if it's a valid ID on this page
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const target = document.querySelector(targetId);
-      
-      if (target) {
-        e.preventDefault(); // Stop default jump
-        
-        // Calculate Center Position
-        // Element Top + Half Height - Half Viewport Height
-        const elementCenter = target.offsetTop + (target.offsetHeight / 2);
-        const viewportCenter = window.innerHeight / 2;
-        const scrollPos = elementCenter - viewportCenter;
-        
-        // Execute Smooth Scroll
-        window.scrollTo({
-          top: scrollPos,
-          behavior: 'smooth'
-        });
-        
-        // Optional: Update URL without jumping
-        history.pushState(null, null, targetId);
-      }
-    });
-  });
-
   // Disable greedy navigation behavior - keep all items visible
   // Remove any inline styles that hide navigation items
   const navItems = document.querySelectorAll('.greedy-nav .visible-links li');
