@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: ""
+layout: splash
 author_profile: false
 redirect_from: 
   - /about/
@@ -163,9 +164,15 @@ redirect_from:
   display: grid;
   grid-template-columns: 698px 482px;
   column-gap: 124px;
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto 0 auto;
+  
+  /* Force Full Viewport Width */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
   padding: 62px 0;
   justify-content: center;
   align-items: start;
@@ -350,6 +357,7 @@ redirect_from:
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scroll from full-width elements */
 }
 
 section {
