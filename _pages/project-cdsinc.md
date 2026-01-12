@@ -84,6 +84,14 @@ author_profile: false
   line-height: 1;
 }
 
+.project-creators {
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.95;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  font-weight: 400;
+}
+
 /* --- Metadata Section --- */
 .project-meta-detailed {
   max-width: 900px;
@@ -225,7 +233,7 @@ author_profile: false
   </div>
   <div class="hero-text-container">
     <h1 class="project-title-large">CDSInc</h1>
-    <p style="font-size: 1.2rem; opacity: 0.9;">Project Portfolio</p>
+    <p class="project-creators">Monika Szuban, Vanessa Scherer, Hannah Müller</p>
   </div>
 </div>
 
