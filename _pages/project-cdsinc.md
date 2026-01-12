@@ -23,38 +23,17 @@ author_profile: false
   margin-right: -50vw;
   height: 70vh; /* Taller hero for impact */
   background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
   padding-bottom: 4rem;
   margin-bottom: 3rem;
   cursor: pointer; /* Indicate interactivity */
+  /* simple transition on the property itself */
+  transition: background-image 0.5s ease-in-out;
   overflow: hidden;
-}
-
-.hero-bg-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.hero-bg-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.hero-bg-layer.active {
-  opacity: 1;
 }
 
 /* Overlay gradient for text readability */
@@ -240,10 +219,7 @@ author_profile: false
 </style>
 
 <!-- Hero Gallery -->
-<div id="hero-gallery" class="project-hero" onclick="cycleImage()">
-  <div id="hero-bg-container" class="hero-bg-container">
-    <!-- Background layers will be inserted here by JS -->
-  </div>
+<div id="hero-gallery" class="project-hero" onclick="cycleImage()" style="background-image: url('{{ site.baseurl }}/assets/projects/Picture01.png'); transition: background-image 0.5s ease-in-out;">
   <div class="gallery-hint">
     <i class="fas fa-camera"></i> Click image to view next
   </div>
@@ -350,53 +326,63 @@ author_profile: false
 </div>
 
 
-<!-- Scripts for Interactivity -->
 <script>
-const images = [
-  "{{ site.baseurl }}/assets/projects/Picture01.png",
-  "{{ site.baseurl }}/assets/projects/Pictur02.png",
-  "{{ site.baseurl }}/assets/projects/Picture03.png",
-  "{{ site.baseurl }}/assets/projects/Picture04.png"
-];
-
-let currentIndex = 0;
-
-// Initialize Layers for Crossfade
-const bgContainer = document.getElementById('hero-bg-container');
-
-if (bgContainer) {
-    images.forEach((src, index) => {
-        const layer = document.createElement('div');
-        layer.className = `hero-bg-layer ${index === 0 ? 'active' : ''}`;
-        layer.style.backgroundImage = `url('${src}')`;
-        bgContainer.appendChild(layer);
+(function() {
+  /* Safely define vars in IIFE but expose functions to window */
+  
+  var images = [
+    "{{ site.baseurl }}/assets/projects/Picture01.png",
+    "{{ site.baseurl }}/assets/projects/Pictur02.png",
+    "{{ site.baseurl }}/assets/projects/Picture03.png",
+    "{{ site.baseurl }}/assets/projects/Picture04.png"
+  ];
+  
+  var currentIndex = 0;
+  
+  function initGallery() {
+    console.log("Initializing CDSInc Gallery...");
+    var heroElement = document.getElementById('hero-gallery');
+    
+    /* Preload images */
+    images.forEach(function(src) {
+      var img = new Image();
+      img.src = src;
     });
-}
 
-function cycleImage() {
-  const layers = document.querySelectorAll('.hero-bg-layer');
-  if(layers.length === 0) return;
-
-  // Fade out current
-  layers[currentIndex].classList.remove('active');
-  
-  // Update index
-  currentIndex = (currentIndex + 1) % layers.length;
-  
-  // Fade in next
-  layers[currentIndex].classList.add('active');
-}
-
-function toggleSection(id, btn) {
-  const content = document.getElementById(id);
-  const isExpanded = content.classList.contains('expanded');
-  
-  if (isExpanded) {
-    content.classList.remove('expanded');
-    btn.innerText = "Read More";
-  } else {
-    content.classList.add('expanded');
-    btn.innerText = "Read Less";
+    // Ensure initial state just in case style attribute failed
+    if(heroElement && !heroElement.style.backgroundImage) {
+      heroElement.style.backgroundImage = 'url(\"' + images[0] + '\")';
+    }
   }
-}
+
+  /* Expose Global Functions */
+  window.cycleImage = function() {
+    var heroElement = document.getElementById('hero-gallery');
+    currentIndex = (currentIndex + 1) % images.length;
+    if(heroElement) {
+      heroElement.style.backgroundImage = 'url(\"' + images[currentIndex] + '\")';
+    }
+  };
+
+  window.toggleSection = function(id, btn) {
+    var content = document.getElementById(id);
+    if (!content) return;
+    
+    var isExpanded = content.classList.contains('expanded');
+    if (isExpanded) {
+      content.classList.remove('expanded');
+      btn.innerText = "Read More";
+    } else {
+      content.classList.add('expanded');
+      btn.innerText = "Read Less";
+    }
+  };
+
+  /* Robust Execution Trigger */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGallery);
+  } else {
+    initGallery();
+  }
+})();
 </script>
