@@ -100,28 +100,27 @@ SKILLS & INTERESTS
 **Technical Skills:**
 
 <div class="skills-grid">
-  <!-- Dev & Office (Reversed to Top) -->
-  <img src="/HackathonSecondTry/assets/images/programs-icons/VisualStudioCode.png" alt="VS Code" title="VS Code">
-  <img src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub" class="invert-dark">
-  <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion" class="invert-dark">
-  <img src="/HackathonSecondTry/assets/images/programs-icons/MsOffice.png" alt="MS Office" title="MS Office">
-
-  <!-- 3D -->
-  <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5" class="invert-dark">
-  <img src="https://cdn.simpleicons.org/item/blender" alt="Blender" title="Blender"> <!-- Typo safeguard, checking original -->
-  <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
-  <img src="/HackathonSecondTry/assets/images/programs-icons/SubstancePainter.png" alt="Substance Painter" title="Substance Painter">
-  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max (Autodesk)" title="3ds Max" class="invert-dark">
-  <img src="https://cdn.simpleicons.org/rhinoceros" alt="Rhinoceros 3D" title="Rhinoceros 3D">
-  <img src="/HackathonSecondTry/assets/images/programs-icons/SplineLogo.png" alt="Spline" title="Spline">
-  
-  <!-- Design (Reversed to Bottom) -->
+  <!-- Row 1: Design/Proto/Org (6 items) -->
   <img src="https://cdn.simpleicons.org/figma" alt="Figma" title="Figma">
   <img src="https://cdn.simpleicons.org/framer" alt="Framer" title="Framer">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/SplineLogo.png" alt="Spline" title="Spline">
+  <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion" class="invert-dark">
+  <img src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub" class="invert-dark">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/MsOffice.png" alt="MS Office" title="MS Office">
+
+  <!-- Row 2: 3D & Dev (6 items) -->
+  <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
+  <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5" class="invert-dark">
+  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max (Autodesk)" title="3ds Max" class="invert-dark">
+  <img src="https://cdn.simpleicons.org/rhinoceros" alt="Rhinoceros 3D" title="Rhinoceros 3D">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/VisualStudioCode.png" alt="VS Code" title="VS Code">
   <img src="/HackathonSecondTry/assets/images/programs-icons/InDesign.png" alt="InDesign" title="InDesign">
+
+  <!-- Row 3: Adobe Rest (4 items) -->
   <img src="/HackathonSecondTry/assets/images/programs-icons/Photoshop.png" alt="Photoshop" title="Photoshop">
   <img src="/HackathonSecondTry/assets/images/programs-icons/Illustrator.png" alt="Illustrator" title="Illustrator">
   <img src="/HackathonSecondTry/assets/images/programs-icons/AfterEffects.png" alt="After Effects" title="After Effects">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/SubstancePainter.png" alt="Substance Painter" title="Substance Painter">
 </div>
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
@@ -230,8 +229,8 @@ SKILLS & INTERESTS
 /* Skills Grid Styling */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Enforce 4 columns */
-  gap: 2rem; /* Increased gap */
+  grid-template-columns: repeat(6, 1fr); /* Enforce 6 columns */
+  gap: 1.5rem; /* Adjusted gap for tighter packing */
   margin-top: 1rem;
   margin-bottom: 2rem;
   justify-items: center;
