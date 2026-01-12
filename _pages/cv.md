@@ -100,27 +100,28 @@ SKILLS & INTERESTS
 **Technical Skills:**
 
 <div class="skills-grid">
-  <!-- Design -->
+  <!-- Dev & Office (Reversed to Top) -->
+  <img src="/HackathonSecondTry/assets/images/programs-icons/VisualStudioCode.png" alt="VS Code" title="VS Code">
+  <img src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub" class="invert-dark">
+  <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion" class="invert-dark">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/MsOffice.png" alt="MS Office" title="MS Office">
+
+  <!-- 3D -->
+  <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5" class="invert-dark">
+  <img src="https://cdn.simpleicons.org/item/blender" alt="Blender" title="Blender"> <!-- Typo safeguard, checking original -->
+  <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/SubstancePainter.png" alt="Substance Painter" title="Substance Painter">
+  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max (Autodesk)" title="3ds Max" class="invert-dark">
+  <img src="https://cdn.simpleicons.org/rhinoceros" alt="Rhinoceros 3D" title="Rhinoceros 3D">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/SplineLogo.png" alt="Spline" title="Spline">
+  
+  <!-- Design (Reversed to Bottom) -->
   <img src="https://cdn.simpleicons.org/figma" alt="Figma" title="Figma">
   <img src="https://cdn.simpleicons.org/framer" alt="Framer" title="Framer">
   <img src="/HackathonSecondTry/assets/images/programs-icons/InDesign.png" alt="InDesign" title="InDesign">
   <img src="/HackathonSecondTry/assets/images/programs-icons/Photoshop.png" alt="Photoshop" title="Photoshop">
   <img src="/HackathonSecondTry/assets/images/programs-icons/Illustrator.png" alt="Illustrator" title="Illustrator">
   <img src="/HackathonSecondTry/assets/images/programs-icons/AfterEffects.png" alt="After Effects" title="After Effects">
-  
-  <!-- 3D -->
-  <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5">
-  <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
-  <img src="/HackathonSecondTry/assets/images/programs-icons/SubstancePainter.png" alt="Substance Painter" title="Substance Painter">
-  <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max (Autodesk)" title="3ds Max">
-  <img src="https://cdn.simpleicons.org/rhinoceros" alt="Rhinoceros 3D" title="Rhinoceros 3D">
-  <img src="/HackathonSecondTry/assets/images/programs-icons/SplineLogo.png" alt="Spline" title="Spline">
-  
-  <!-- Dev & Office -->
-  <img src="/HackathonSecondTry/assets/images/programs-icons/VisualStudioCode.png" alt="VS Code" title="VS Code">
-  <img src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub">
-  <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion">
-  <img src="/HackathonSecondTry/assets/images/programs-icons/MsOffice.png" alt="MS Office" title="MS Office">
 </div>
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
@@ -239,17 +240,26 @@ SKILLS & INTERESTS
 
 .skills-grid img {
   width: 100%;
-  max-width: 60px; /* Increased size for visibility */
+  max-width: 60px;
   height: auto;
-  transition: transform 0.3s ease;
-  /* Removed grayscale filter so user's custom icons show in color */
-  opacity: 0.9;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(100%) opacity(0.7); /* Default: Grey & Faded */
 }
 
 .skills-grid img:hover {
   transform: scale(1.1);
-  filter: grayscale(0%);
-  opacity: 1;
+  filter: grayscale(0%) opacity(1); /* Hover: Full Color */
+}
+
+/* Theme Adaptation for Specific Icons (Unreal, Notion, 3ds Max, GitHub) */
+html[data-theme="dark"] .skills-grid img.invert-dark,
+html[data-theme="cyberpunk"] .skills-grid img.invert-dark {
+  filter: grayscale(100%) invert(1) opacity(0.8); /* Inverted Grey for Dark Modes */
+}
+
+html[data-theme="dark"] .skills-grid img.invert-dark:hover,
+html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
+  filter: invert(1) opacity(1); /* Keep inverted on hover to stay visible */
 }
 
 /* Header link styling */
