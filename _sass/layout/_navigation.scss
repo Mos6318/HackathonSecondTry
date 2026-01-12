@@ -186,6 +186,8 @@
     padding: 0.5rem 0;
     color: var(--global-masthead-link-color);
     text-decoration: none;
+    font-size: 1rem;
+    /* Enforce consistent size */
 
     &:hover {
       color: var(--global-masthead-link-color-hover);

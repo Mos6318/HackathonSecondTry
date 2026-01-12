@@ -325,7 +325,7 @@ author_profile: false
 
 <!-- Scripts for Interactivity -->
 <script>
-// --- Gallery Logic ---
+/* --- Gallery Logic --- */
 // List of images provided in assets/projects
 const images = [
   "{{ site.baseurl }}/assets/projects/Picture01.png",
@@ -357,7 +357,7 @@ function cycleImage() {
   console.log("Switched to image:", images[currentIndex]);
 }
 
-// --- Collapsible Logic ---
+/* --- Collapsible Logic --- */
 function toggleSection(id, btn) {
   const content = document.getElementById(id);
   const isExpanded = content.classList.contains('expanded');
