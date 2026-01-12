@@ -384,76 +384,9 @@ section {
   </a>
 </div>
 
-<style>
-/* Custom Navigation Layout */
-.greedy-nav .visible-links {
-  display: flex !important;
-  align-items: center;
-  width: 100%;
-}
-
-.greedy-nav .visible-links li {
-  display: inline-block !important;
-  vertical-align: middle;
-}
-
-.greedy-nav .visible-links li:first-child {
-  margin-right: auto;
-}
-
-.greedy-nav .visible-links li:not(:first-child):not(#theme-toggle) {
-  margin: 0 1rem;
-  font-size: 0.75rem;
-}
-
-.greedy-nav .visible-links #theme-toggle {
-  margin-left: auto;
-}
-
-/* Restore navigation bar padding */
-.masthead__inner-wrap {
-  padding: 0.5em 1em !important;
-}
-
-/* Hide burger menu button */
-.greedy-nav button {
-  display: none !important;
-}
-
-/* Ensure hidden-links don't interfere */
-.greedy-nav .hidden-links {
-  display: none !important;
-}
-
-/* Force all navigation items to stay visible */
-.greedy-nav .visible-links li[style*="display: none"] {
-  display: inline-block !important;
-}
-</style>
-
 <script>
-// Disable greedy navigation behavior - keep all items visible
 document.addEventListener('DOMContentLoaded', function() {
-  // Remove any inline styles that hide navigation items
-  const navItems = document.querySelectorAll('.greedy-nav .visible-links li');
-  navItems.forEach(item => {
-    item.style.display = 'inline-block';
-  });
   
-  // Disable the greedy nav resize observer if it exists
-  if (window.ResizeObserver) {
-    const originalResizeObserver = window.ResizeObserver;
-    window.ResizeObserver = function(callback) {
-      return new originalResizeObserver(function(entries, observer) {
-        // Don't call the callback for greedy-nav elements
-        const filteredEntries = entries.filter(entry => {
-          return !entry.target.classList.contains('greedy-nav');
-        });
-        if (filteredEntries.length > 0) {
-          callback(filteredEntries, observer);
-        }
-      });
-    };
-  }
+  // 1. Select all hash links (internal navigation)
 });
 </script>
