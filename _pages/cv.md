@@ -29,21 +29,21 @@ redirect_from:
 
 
 
-<div class="cv-content-wrapper" markdown="1">
+<div class="cv-content-wrapper">
   <!-- Mode Switcher -->
   <div class="cv-mode-switcher">
-    <button class="mode-btn active" onclick="switchMode('text')">
+    <button class="mode-btn active" onclick="switchMode('text', event)">
       <i class="fas fa-file-alt"></i> Text
     </button>
-    <button class="mode-btn" onclick="switchMode('visual')">
+    <button class="mode-btn" onclick="switchMode('visual', event)">
       <i class="fas fa-image"></i> Visual
     </button>
-    <button class="mode-btn" onclick="switchMode('audio')">
+    <button class="mode-btn" onclick="switchMode('audio', event)">
       <i class="fas fa-microphone"></i> Audio
     </button>
   </div>
 
-<div id="cv-mode-text" class="cv-section active">
+<div id="cv-mode-text" class="cv-section active" markdown="1">
 <div class="cv-header">
   <h1>Monika Szuban</h1>
   <p>Ingolstadt, Germany | <a href="mailto:monika.szuban@gmail.com">monika.szuban@gmail.com</a></p>
@@ -455,18 +455,26 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 
 <script>
 // CV Mode Switching Logic
-function switchMode(mode) {
+// CV Mode Switching Logic
+function switchMode(mode, event) {
   // Update Buttons
   document.querySelectorAll('.mode-btn').forEach(btn => {
     btn.classList.remove('active');
   });
-  event.currentTarget.classList.add('active');
+  // Use event.currentTarget or the clicked element
+  if (event && event.currentTarget) {
+    event.currentTarget.classList.add('active');
+  }
 
   // Update Sections
   document.querySelectorAll('.cv-section').forEach(section => {
     section.classList.remove('active');
   });
-  document.getElementById('cv-mode-' + mode).classList.add('active');
+  
+  const targetSection = document.getElementById('cv-mode-' + mode);
+  if (targetSection) {
+    targetSection.classList.add('active');
+  }
 }
 </script>
 
