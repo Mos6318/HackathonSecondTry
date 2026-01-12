@@ -31,26 +31,29 @@ redirect_from:
 
 <div class="cv-content-wrapper">
   <!-- Mode Switcher -->
-  <div class="cv-mode-switcher">
-    <button class="mode-btn active" onclick="switchMode('text', event)">
-      <i class="fas fa-file-alt"></i> Text
-    </button>
-    <button class="mode-btn" onclick="switchMode('visual', event)">
-      <i class="fas fa-image"></i> Visual
-    </button>
-    <button class="mode-btn" onclick="switchMode('audio', event)">
-      <i class="fas fa-microphone"></i> Audio
-    </button>
+  <!-- Flex Header with Title and Hamburger Menu -->
+  <div class="cv-header-flex">
+    <div class="cv-header-title">
+      <h1>PROFESSIONAL SUMMARY</h1>
+    </div>
+    
+    <!-- Hamburger Menu -->
+    <div class="cv-hamburger-container">
+      <button class="hamburger-btn" onclick="toggleMenu(event)">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="cv-dropdown" class="cv-dropdown-menu">
+        <a href="#" onclick="switchMode('text', event)">Text</a>
+        <a href="#" onclick="switchMode('visual', event)">Visual</a>
+        <a href="#" onclick="switchMode('audio', event)">Audio</a>
+        <hr style="margin: 0; border: 0; border-top: 1px solid var(--global-border-color);">
+        <a href="#"><i class="fas fa-file-download" style="margin-right: 0.5rem;"></i> Download</a>
+      </div>
+    </div>
   </div>
 
 <div id="cv-mode-text" class="cv-section active" markdown="1">
-<div class="cv-header">
-  <h1>Monika Szuban</h1>
-  <p>Ingolstadt, Germany | <a href="mailto:monika.szuban@gmail.com">monika.szuban@gmail.com</a></p>
-</div>
 
-PROFESSIONAL SUMMARY
-======
 As a Master's student in User Experience Design at Technische Hochschule Ingolstadt, with a background in Product Design and Visual Communication, I am developing strong skills in UX research, interaction design, and user-centered methodologies. My foundation in branding, product, and visual design allows me to create holistic experiences that balance usability with aesthetics. I am passionate about understanding user needs, designing intuitive interfaces, and contributing to projects that drive meaningful interaction. I am EU citizen with full time work rights.
 
 EDUCATION
@@ -237,14 +240,15 @@ SKILLS & INTERESTS
 
 /* Typography & Spacing Updates */
 .cv-content-wrapper h1 {
-  margin-top: 4rem; /* Increased spacing as requested */
+  margin-top: 4rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--global-border-color); /* Subtle divider */
+  border-bottom: 1px solid var(--global-border-color); /* Restored global border */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+/* Remove separate rules to avoid duplication/confusion */
 .cv-content-wrapper ul {
   margin-left: 1.5rem;
 }
@@ -313,7 +317,9 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 }
 
 .cv-header {
-  display: none; /* Keep header hidden as requested */
+  display: block; /* Ensure header is always visible */
+  border-bottom: none !important; /* Remove phantom double border */
+  margin-bottom: 0; /* Let H1 margin handle spacing */
 }
 
 .page__title {
@@ -378,41 +384,73 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 }
 
 /* --- CV MODE SWITCHER STYLES --- */
-.cv-mode-switcher {
+/* --- CV HEADER & HAMBURGER FLEX --- */
+.cv-header-flex {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-}
-
-.mode-btn {
-  background: transparent;
-  border: 2px solid var(--global-link-color); /* Obey Theme Color */
-  color: var(--global-text-color); /* Obey Theme Text */
-  padding: 0.5rem 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 600;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-border-color); /* The single persistent line */
+  padding-bottom: 0.5rem;
+  position: relative; /* Context for dropdown */
 }
 
-.mode-btn:hover {
-  background: var(--global-link-color);
-  color: var(--global-bg-color);
-  box-shadow: 0 0 10px var(--global-link-color); /* Neon Glow effect */
+.cv-header-title h1 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 2em; /* Ensure size matches previous */
 }
 
-.mode-btn.active {
-  background: var(--global-link-color);
-  color: var(--global-bg-color);
-  box-shadow: 0 0 15px var(--global-link-color);
+.cv-hamburger-container {
+  position: relative;
+}
+
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  color: var(--global-text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.hamburger-btn:hover {
+  color: var(--global-link-color);
+}
+
+.cv-dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: var(--global-bg-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border: 1px solid var(--global-border-color);
+  border-radius: 4px;
+}
+
+.cv-dropdown-menu.show {
+  display: block;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.cv-dropdown-menu a {
+  color: var(--global-text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+}
+
+.cv-dropdown-menu a:hover {
+  background-color: var(--global-border-color); /* Subtle hover bg */
+  color: var(--global-link-color);
 }
 
 .cv-section {
@@ -432,9 +470,12 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 /* Visual Mode Styles */
 .cv-infographic {
   width: 100%;
+  max-width: 900px; /* Limit width to match text content */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: block;
+  margin: 0 auto;
 }
 
 /* Audio Mode Styles */
@@ -442,13 +483,15 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
   text-align: center;
   padding: 3rem;
   border: 2px solid var(--global-border-color);
-  border-radius: 12px;
+  border-radius: 24px; /* More rounded corners */
   background: rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .neon-audio {
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   margin-top: 1rem;
 }
 </style>
@@ -456,15 +499,9 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 <script>
 // CV Mode Switching Logic
 // CV Mode Switching Logic
+// CV Mode Switching Logic
 function switchMode(mode, event) {
-  // Update Buttons
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  // Use event.currentTarget or the clicked element
-  if (event && event.currentTarget) {
-    event.currentTarget.classList.add('active');
-  }
+  if (event) event.preventDefault(); // Prevent link jump
 
   // Update Sections
   document.querySelectorAll('.cv-section').forEach(section => {
@@ -475,7 +512,26 @@ function switchMode(mode, event) {
   if (targetSection) {
     targetSection.classList.add('active');
   }
+
+  // Close Menu
+  document.getElementById('cv-dropdown').classList.remove('show');
 }
+
+// Toggle Hamburger Menu
+function toggleMenu(event) {
+  event.stopPropagation(); // Prevent immediate closing
+  document.getElementById('cv-dropdown').classList.toggle('show');
+}
+
+// Close Dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  const dropdown = document.getElementById('cv-dropdown');
+  const hamburger = document.querySelector('.hamburger-btn');
+  
+  if (dropdown && dropdown.classList.contains('show') && !hamburger.contains(event.target)) {
+    dropdown.classList.remove('show');
+  }
+});
 </script>
 
 <script>
