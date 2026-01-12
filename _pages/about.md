@@ -38,7 +38,7 @@ redirect_from:
       <p class="project-description">
         From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
       </p>
-      <a href="#" class="project-btn">VIEW PROJECT</a>
+      <a href="{{ site.baseurl }}/project-cdsinc/" class="project-btn">VIEW PROJECT</a>
     </div>
   </div>
 
@@ -50,7 +50,7 @@ redirect_from:
       <p class="project-description">
         From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
       </p>
-      <a href="#" class="project-btn">VIEW PROJECT</a>
+      <a href="{{ site.baseurl }}/project-echodrive/" class="project-btn">VIEW PROJECT</a>
     </div>
     <div class="project-images">
       <img src="/HackathonSecondTry/assets/images/Echo_drive.png" alt="Echo Drive">
@@ -68,7 +68,7 @@ redirect_from:
       <p class="project-description">
         From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
       </p>
-      <a href="#" class="project-btn">VIEW PROJECT</a>
+      <a href="{{ site.baseurl }}/project-grannify/" class="project-btn">VIEW PROJECT</a>
     </div>
   </div>
 </section>
