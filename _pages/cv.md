@@ -47,7 +47,7 @@ redirect_from:
         <a href="#" onclick="switchMode('visual', event)">Visual</a>
         <a href="#" onclick="switchMode('audio', event)">Audio</a>
         <hr style="margin: 0; border: 0; border-top: 1px solid var(--global-border-color);">
-        <a href="/HackathonSecondTry/assets/images/Monika_Szuban_CVHekaton.pdf" download><i class="fas fa-file-download" style="margin-right: 0.5rem;"></i> Download</a>
+        <a href="{{ site.baseurl }}/assets/images/Monika_Szuban_CVHekaton.pdf" download><i class="fas fa-file-download" style="margin-right: 0.5rem;"></i> Download</a>
       </div>
     </div>
   </div>
@@ -498,9 +498,7 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 
 <script>
 // CV Mode Switching Logic
-// CV Mode Switching Logic
-// CV Mode Switching Logic
-function switchMode(mode, event) {
+window.switchMode = function(mode, event) {
   if (event) event.preventDefault(); // Prevent link jump
 
   // Update Sections
@@ -514,10 +512,16 @@ function switchMode(mode, event) {
   }
 
   // Close Menu
-  document.getElementById('cv-dropdown').classList.remove('show');
-}
+  const dropdown = document.getElementById('cv-dropdown');
+  if (dropdown) dropdown.classList.remove('show');
+};
 
 // Toggle Hamburger Menu
+window.toggleMenu = function(event) {
+  event.stopPropagation(); // Prevent immediate closing
+  const dropdown = document.getElementById('cv-dropdown');
+  if (dropdown) dropdown.classList.toggle('show');
+};
 function toggleMenu(event) {
   event.stopPropagation(); // Prevent immediate closing
   document.getElementById('cv-dropdown').classList.toggle('show');
