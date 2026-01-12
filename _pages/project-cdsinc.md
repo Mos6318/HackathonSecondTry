@@ -324,7 +324,7 @@ author_profile: false
 
 <!-- Download -->
 <div class="download-section">
-  <a href="#" class="download-btn">Download PDF Report</a>
+  <a href="https://github.com/Mos6318/HackathonSecondTry" target="_blank" class="download-btn">View on GitHub</a>
 </div>
 
 <!-- Back Link -->
