@@ -23,16 +23,38 @@ author_profile: false
   margin-right: -50vw;
   height: 70vh; /* Taller hero for impact */
   background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
   padding-bottom: 4rem;
   margin-bottom: 3rem;
   cursor: pointer; /* Indicate interactivity */
-  transition: background-image 0.5s ease-in-out;
   overflow: hidden;
+}
+
+.hero-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hero-bg-layer.active {
+  opacity: 1;
 }
 
 /* Overlay gradient for text readability */
@@ -45,6 +67,7 @@ author_profile: false
   height: 100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.9) 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 /* Hint for interactivity */
@@ -60,6 +83,7 @@ author_profile: false
   pointer-events: none;
   opacity: 0.8;
   border: 1px solid rgba(255,255,255,0.3);
+  z-index: 2;
 }
 
 .hero-text-container {
@@ -217,6 +241,9 @@ author_profile: false
 
 <!-- Hero Gallery -->
 <div id="hero-gallery" class="project-hero" onclick="cycleImage()">
+  <div id="hero-bg-container" class="hero-bg-container">
+    <!-- Background layers will be inserted here by JS -->
+  </div>
   <div class="gallery-hint">
     <i class="fas fa-camera"></i> Click image to view next
   </div>
@@ -333,22 +360,31 @@ const images = [
 ];
 
 let currentIndex = 0;
-const heroElement = document.getElementById('hero-gallery');
 
-images.forEach(src => {
-  const img = new Image();
-  img.src = src;
-});
+// Initialize Layers for Crossfade
+const bgContainer = document.getElementById('hero-bg-container');
 
-if(heroElement) {
-    heroElement.style.backgroundImage = `url('${images[0]}')`;
+if (bgContainer) {
+    images.forEach((src, index) => {
+        const layer = document.createElement('div');
+        layer.className = `hero-bg-layer ${index === 0 ? 'active' : ''}`;
+        layer.style.backgroundImage = `url('${src}')`;
+        bgContainer.appendChild(layer);
+    });
 }
 
 function cycleImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  if(heroElement) {
-    heroElement.style.backgroundImage = `url('${images[currentIndex]}')`;
-  }
+  const layers = document.querySelectorAll('.hero-bg-layer');
+  if(layers.length === 0) return;
+
+  // Fade out current
+  layers[currentIndex].classList.remove('active');
+  
+  // Update index
+  currentIndex = (currentIndex + 1) % layers.length;
+  
+  // Fade in next
+  layers[currentIndex].classList.add('active');
 }
 
 function toggleSection(id, btn) {
