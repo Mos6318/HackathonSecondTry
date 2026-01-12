@@ -203,6 +203,10 @@
     color: var(--global-text-color);
     cursor: pointer;
     z-index: 100;
+
+    @include breakpoint($large) {
+      display: none;
+    }
   }
 
   .visible-links {
