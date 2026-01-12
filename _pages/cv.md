@@ -103,24 +103,24 @@ SKILLS & INTERESTS
   <!-- Design -->
   <img src="https://cdn.simpleicons.org/figma" alt="Figma" title="Figma">
   <img src="https://cdn.simpleicons.org/framer" alt="Framer" title="Framer">
-  <img src="https://cdn.simpleicons.org/adobeindesign" alt="InDesign" title="InDesign">
-  <img src="https://cdn.simpleicons.org/adobephotoshop" alt="Photoshop" title="Photoshop">
-  <img src="https://cdn.simpleicons.org/adobeillustrator" alt="Illustrator" title="Illustrator">
-  <img src="https://cdn.simpleicons.org/adobeaftereffects" alt="After Effects" title="After Effects">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/InDesign.png" alt="InDesign" title="InDesign">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/Photoshop.png" alt="Photoshop" title="Photoshop">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/Illustrator.png" alt="Illustrator" title="Illustrator">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/AfterEffects.png" alt="After Effects" title="After Effects">
   
   <!-- 3D -->
   <img src="https://cdn.simpleicons.org/unrealengine" alt="Unreal Engine 5" title="Unreal Engine 5">
   <img src="https://cdn.simpleicons.org/blender" alt="Blender" title="Blender">
-  <img src="https://cdn.simpleicons.org/adobesubstance3dpainter" alt="Substance Painter" title="Substance Painter">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/SubstancePainter.png" alt="Substance Painter" title="Substance Painter">
   <img src="https://cdn.simpleicons.org/autodesk" alt="3ds Max (Autodesk)" title="3ds Max">
   <img src="https://cdn.simpleicons.org/rhinoceros" alt="Rhinoceros 3D" title="Rhinoceros 3D">
-  <img src="https://cdn.simpleicons.org/spline" alt="Spline" title="Spline">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/SplineLogo.png" alt="Spline" title="Spline">
   
   <!-- Dev & Office -->
-  <img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code" title="VS Code">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/VisualStudioCode.png" alt="VS Code" title="VS Code">
   <img src="https://cdn.simpleicons.org/github" alt="GitHub" title="GitHub">
   <img src="https://cdn.simpleicons.org/notion" alt="Notion" title="Notion">
-  <img src="https://cdn.simpleicons.org/microsoft365" alt="MS Office" title="MS Office">
+  <img src="/HackathonSecondTry/assets/images/programs-icons/MsOffice.png" alt="MS Office" title="MS Office">
 </div>
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
@@ -229,8 +229,8 @@ SKILLS & INTERESTS
 /* Skills Grid Styling */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr); /* Enforce 4 columns */
+  gap: 2rem; /* Increased gap */
   margin-top: 1rem;
   margin-bottom: 2rem;
   justify-items: center;
@@ -239,11 +239,11 @@ SKILLS & INTERESTS
 
 .skills-grid img {
   width: 100%;
-  max-width: 48px; /* Icon size */
+  max-width: 60px; /* Increased size for visibility */
   height: auto;
   transition: transform 0.3s ease;
-  filter: grayscale(100%); /* Optional: clean look, color on hover */
-  opacity: 0.7;
+  /* Removed grayscale filter so user's custom icons show in color */
+  opacity: 0.9;
 }
 
 .skills-grid img:hover {
