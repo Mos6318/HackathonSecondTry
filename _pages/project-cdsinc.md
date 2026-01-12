@@ -257,11 +257,11 @@ author_profile: false
     <h3>Problem Statement</h3>
     <div id="problem-content" class="collapsible-content">
       <p class="preview-text">
-        In the rapidly evolving landscape of retail and interior design, customers often struggle to visualize how furniture and decor will fit into their personal spaces. Traditional static images or 2D floor plans fail to convey the true spatial relationships and aesthetic impact of products.
+        This project was developed as part of a semester assignment requiring three mini-games: one in 2D and two using AR technology with image recognition, obscured objects, and interactive actions. The challenge was transforming these broad requirements into a cohesive, engaging product.
       </p>
       <div class="full-text">
-        <p>This "imagination gap" leads to hesitation in purchasing, higher return rates, and overall customer dissatisfaction. Furthermore, checking compatibility with existing furniture and lighting conditions is nearly impossible without physically having the product in the room.</p>
-        <p>Our challenge was to bridge this gap by creating an intuitive, immersive solution that empowers users to place, rotate, and interact with 3D product models in their own environment in real-time context.</p>
+        <p>Our team decided to frame the project around virtual cat care, blending playfulness with educational elements teaching responsibility in pet ownership. The goal was to create an experience where players could learn about caring for pets while having fun.</p>
+        <p>We named it <strong>Cat Distribution System Inc.</strong>, inspired by the idea that "cats adopt us, not the other way around." The concept balanced humor with purpose, giving the game both character and educational direction.</p>
       </div>
     </div>
     <button class="expand-btn" data-section="problem-content">Read More</button>
@@ -272,17 +272,19 @@ author_profile: false
     <h3>Method</h3>
     <div id="method-content" class="collapsible-content">
       <p class="preview-text">
-        We adopted a user-centered design approach, starting with extensive user research to identify key pain points in the furniture buying process. The development phase utilized Unity 3D for its robust rendering engine and AR Foundation for cross-platform Augmented Reality capabilities.
+        We structured the game around three distinct mini-games connected by theme. Development used Unity and AR Foundation, with Figma for UI design and Blender for 3D assets. Agile sprints and two rounds of usability testing shaped the final experience through iterative improvement.
       </p>
       <div class="full-text">
-        <p><strong>Phase 1: Research & Prototyping</strong><br>
-        Conducted interviews and surveys (N=50) to understand user needs. Created low-fidelity wireframes in Figma to map out the user journey and core interface elements.</p>
+        <p><strong>Three Mini-Games</strong><br>
+        <em>Memory Game (2D):</em> Classical matching of cat-related items under time and move limits.<br>
+        <em>Toy Hunt (AR):</em> Scan environment to find hidden boxes containing cat toys with interactive feedback.<br>
+        <em>Flappy Cat (AR):</em> Tilt-controlled obstacle avoidance game featuring the virtual cat.</p>
         
-        <p><strong>Phase 2: Development</strong><br>
-        Implement markerless AR tracking using ARKit/ARCore. optimized 3D assets for mobile performance using Blender. programmed interactive gestures (pinch-to-scale, rotate) in C#.</p>
+        <p><strong>Testing & Iteration</strong><br>
+        After the first usability round, we identified struggles with AR onboarding and progress visibility. We responded with tutorials, help overlays, and progress counters. By the second round, HARUS scores improved significantly.</p>
         
-        <p><strong>Phase 3: Testing</strong><br>
-        Performed usability testing sessions where users were tasked with furnishing a virtual room. Iterated on UI feedback to improve button placement and instructional cues.</p>
+        <p><strong>Tools Used</strong><br>
+        Unity & AR Foundation for development, Figma for UI design, Blender for 3D models, and AI tools (ChatGPT, Claude) for rapid prototyping and debugging support.</p>
       </div>
     </div>
     <button class="expand-btn" data-section="method-content">Read More</button>
@@ -293,16 +295,17 @@ author_profile: false
     <h3>Outcomes</h3>
     <div id="outcomes-content" class="collapsible-content">
       <p class="preview-text">
-        The final CDSInc application successfully demonstrated a seamless AR experience. User testing revealed a 40% increase in purchase confidence compared to viewing static images alone. The application runs smoothly on standard mid-range mobile devices with stable tracking.
+        The final game featured three fully integrated mini-games with measurably improved usability between test rounds. We made the game available on GitHub and were invited to showcase it at GG Bavaria Convention (March 2025), validating its educational and entertainment value.
       </p>
       <div class="full-text">
-        <p>Key achievements include:</p>
+        <p><strong>Key Achievements:</strong></p>
         <ul>
-          <li><strong>High Fidelity Rendering:</strong> Realistic lighting and material estimation.</li>
-          <li><strong>Intuitive UI:</strong> Users could place an object within 5 seconds of launching the AR session.</li>
-          <li><strong>Scalability:</strong> The backend architecture allows for easy addition of new catalog items without app updates.</li>
+          <li><strong>Functional AR Integration:</strong> Successfully implemented image recognition, object tracking, and interactive AR experiences across two mini-games.</li>
+          <li><strong>Improved Usability:</strong> HARUS survey scores showed significant improvement in onboarding clarity and progress tracking between testing rounds.</li>
+          <li><strong>Educational Impact:</strong> Balanced playful design with subtle lessons on pet care responsibility, achieving the project's dual purpose.</li>
+          <li><strong>External Recognition:</strong> Selected for showcase at GG Bavaria Convention, demonstrating the game's polish and appeal beyond the classroom.</li>
         </ul>
-        <p>The project received top marks in the "Augmented and Virtual Reality Applications" course for its technical implementation and polished user experience.</p>
+        <p>The project received top marks in the "Augmented and Virtual Reality Applications" course and is <a href="https://github.com/Mos6318/HackathonSecondTry" target="_blank">available on GitHub</a> for download.</p>
       </div>
     </div>
     <button class="expand-btn" data-section="outcomes-content">Read More</button>

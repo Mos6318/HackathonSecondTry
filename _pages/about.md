@@ -36,7 +36,7 @@ redirect_from:
       <h3 class="project-title">CDSInc</h3>
       <div class="project-divider"></div>
       <p class="project-description">
-        From gravida nisl ut velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+        An AR mobile game about virtual cat ownership, blending playful mini-games with educational lessons on responsibility. Built with Unity and AR Foundation as a semester project.
       </p>
       <a href="{{ site.baseurl }}/project-cdsinc/" class="project-btn">VIEW PROJECT</a>
     </div>
