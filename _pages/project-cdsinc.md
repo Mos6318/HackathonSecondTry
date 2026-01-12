@@ -219,7 +219,7 @@ author_profile: false
 </style>
 
 <!-- Hero Gallery -->
-<div id="hero-gallery" class="project-hero" onclick="cycleImage()" style="background-image: url('{{ site.baseurl }}/assets/projects/Picture01.png'); transition: background-image 0.5s ease-in-out;">
+<div id="hero-gallery" class="project-hero" style="background-image: url({{ site.baseurl }}/assets/projects/Picture01.png);">
   <div class="gallery-hint">
     <i class="fas fa-camera"></i> Click image to view next
   </div>
@@ -260,7 +260,7 @@ author_profile: false
         <p>Our challenge was to bridge this gap by creating an intuitive, immersive solution that empowers users to place, rotate, and interact with 3D product models in their own environment in real-time context.</p>
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleSection('problem-content', this)">Read More</button>
+    <button class="expand-btn" data-section="problem-content">Read More</button>
   </div>
 
   <!-- Method -->
@@ -281,7 +281,7 @@ author_profile: false
         Performed usability testing sessions where users were tasked with furnishing a virtual room. Iterated on UI feedback to improve button placement and instructional cues.</p>
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleSection('method-content', this)">Read More</button>
+    <button class="expand-btn" data-section="method-content">Read More</button>
   </div>
 
   <!-- Outcomes -->
@@ -301,7 +301,7 @@ author_profile: false
         <p>The project received top marks in the "Augmented and Virtual Reality Applications" course for its technical implementation and polished user experience.</p>
       </div>
     </div>
-    <button class="expand-btn" onclick="toggleSection('outcomes-content', this)">Read More</button>
+    <button class="expand-btn" data-section="outcomes-content">Read More</button>
   </div>
 
 </div>
@@ -340,7 +340,8 @@ author_profile: false
   var currentIndex = 0;
   
   function initGallery() {
-    console.log("Initializing CDSInc Gallery...");
+    console.log("CDSInc: Initializing gallery and interactive elements");
+    
     var heroElement = document.getElementById('hero-gallery');
     
     /* Preload images */
@@ -349,34 +350,41 @@ author_profile: false
       img.src = src;
     });
 
-    // Ensure initial state just in case style attribute failed
-    if(heroElement && !heroElement.style.backgroundImage) {
-      heroElement.style.backgroundImage = 'url(\"' + images[0] + '\")';
-    }
-  }
-
-  /* Expose Global Functions */
-  window.cycleImage = function() {
-    var heroElement = document.getElementById('hero-gallery');
-    currentIndex = (currentIndex + 1) % images.length;
+    /* Attach click handler to hero for gallery cycling */
     if(heroElement) {
-      heroElement.style.backgroundImage = 'url(\"' + images[currentIndex] + '\")';
+      heroElement.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        heroElement.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+      });
+      
+      /* Set initial image if not already set */
+      if(!heroElement.style.backgroundImage || heroElement.style.backgroundImage === 'none') {
+        heroElement.style.backgroundImage = 'url(' + images[0] + ')';
+      }
     }
-  };
-
-  window.toggleSection = function(id, btn) {
-    var content = document.getElementById(id);
-    if (!content) return;
     
-    var isExpanded = content.classList.contains('expanded');
-    if (isExpanded) {
-      content.classList.remove('expanded');
-      btn.innerText = "Read More";
-    } else {
-      content.classList.add('expanded');
-      btn.innerText = "Read Less";
-    }
-  };
+    /* Attach click handlers to all Read More buttons */
+    var expandButtons = document.querySelectorAll('.expand-btn');
+    expandButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var sectionId = btn.getAttribute('data-section');
+        var content = document.getElementById(sectionId);
+        
+        if (!content) return;
+        
+        var isExpanded = content.classList.contains('expanded');
+        if (isExpanded) {
+          content.classList.remove('expanded');
+          btn.innerText = "Read More";
+        } else {
+          content.classList.add('expanded');
+          btn.innerText = "Read Less";
+        }
+      });
+    });
+    
+    console.log("CDSInc: Gallery and buttons initialized successfully");
+  }
 
   /* Robust Execution Trigger */
   if (document.readyState === 'loading') {
