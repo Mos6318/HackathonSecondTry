@@ -348,24 +348,41 @@ author_profile: false
     
     var heroElement = document.getElementById('hero-gallery');
     
-    /* Preload images */
-    images.forEach(function(src) {
-      var img = new Image();
-      img.src = src;
+    /* Preload ALL images and wait for them to fully load */
+    var loadedImages = 0;
+    var imagePromises = images.map(function(src) {
+      return new Promise(function(resolve, reject) {
+        var img = new Image();
+        img.onload = function() {
+          loadedImages++;
+          console.log("CDSInc: Loaded image " + loadedImages + "/" + images.length);
+          resolve();
+        };
+        img.onerror = function() {
+          console.error("CDSInc: Failed to load image: " + src);
+          resolve(); /* Resolve anyway to not block */
+        };
+        img.src = src;
+      });
     });
 
-    /* Attach click handler to hero for gallery cycling */
-    if(heroElement) {
-      heroElement.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % images.length;
-        heroElement.style.backgroundImage = 'url(' + images[currentIndex] + ')';
-      });
+    /* Wait for all images to load, then enable gallery */
+    Promise.all(imagePromises).then(function() {
+      console.log("CDSInc: All images preloaded successfully");
       
-      /* Set initial image if not already set */
-      if(!heroElement.style.backgroundImage || heroElement.style.backgroundImage === 'none') {
-        heroElement.style.backgroundImage = 'url(' + images[0] + ')';
+      /* Attach click handler to hero for gallery cycling */
+      if(heroElement) {
+        heroElement.addEventListener('click', function() {
+          currentIndex = (currentIndex + 1) % images.length;
+          heroElement.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+        });
+        
+        /* Set initial image if not already set */
+        if(!heroElement.style.backgroundImage || heroElement.style.backgroundImage === 'none') {
+          heroElement.style.backgroundImage = 'url(' + images[0] + ')';
+        }
       }
-    }
+    });
     
     /* Attach click handlers to all Read More buttons */
     var expandButtons = document.querySelectorAll('.expand-btn');
