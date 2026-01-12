@@ -196,33 +196,32 @@ author_profile: false
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* --- Download Button --- */
-.download-section {
-  text-align: center;
+/* --- Action Buttons Section --- */
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
   margin: 4rem 0 6rem 0;
 }
 
-.download-btn {
+.action-btn {
   display: inline-block;
-  padding: 15px 40px;
+  padding: 12px 30px;
+  border: 2px solid var(--global-link-color);
+  color: var(--global-link-color) !important;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.action-btn:hover {
   background: var(--global-link-color);
   color: var(--global-bg-color) !important;
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 50px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.download-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* --- Back Link --- */
-.back-link-wrapper {
-  text-align: center;
-  margin-bottom: 4rem;
+  transform: translateY(-2px);
 }
 </style>
 
@@ -322,15 +321,13 @@ author_profile: false
   </video>
 </div>
 
-<!-- Download -->
-<div class="download-section">
-  <a href="https://github.com/Mos6318/HackathonSecondTry" target="_blank" class="download-btn">View on GitHub</a>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+  <a href="{{ site.baseurl }}/#projects" class="action-btn">← Back to Projects</a>
+  <a href="{{ site.baseurl }}/assets/projects/CDSInc_Project_Report.pdf" download class="action-btn">Download PDF Report</a>
 </div>
 
-<!-- Back Link -->
-<div class="back-link-wrapper">
-  <a href="{{ site.baseurl }}/#projects" style="color: var(--global-text-color-light); border-bottom: 1px solid;">&larr; Back to all projects</a>
-</div>
 
 
 <script>
