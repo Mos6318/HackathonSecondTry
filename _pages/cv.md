@@ -30,6 +30,20 @@ redirect_from:
 
 
 <div class="cv-content-wrapper" markdown="1">
+  <!-- Mode Switcher -->
+  <div class="cv-mode-switcher">
+    <button class="mode-btn active" onclick="switchMode('text')">
+      <i class="fas fa-file-alt"></i> Text
+    </button>
+    <button class="mode-btn" onclick="switchMode('visual')">
+      <i class="fas fa-image"></i> Visual
+    </button>
+    <button class="mode-btn" onclick="switchMode('audio')">
+      <i class="fas fa-microphone"></i> Audio
+    </button>
+  </div>
+
+<div id="cv-mode-text" class="cv-section active">
 <div class="cv-header">
   <h1>Monika Szuban</h1>
   <p>Ingolstadt, Germany | <a href="mailto:monika.szuban@gmail.com">monika.szuban@gmail.com</a></p>
@@ -125,6 +139,25 @@ SKILLS & INTERESTS
 
 **Languages:** Fluent in English and Polish. Beginner in German, Finnish.
 </div>
+</div> <!-- End cv-mode-text -->
+
+<!-- Visual Mode Content -->
+<div id="cv-mode-visual" class="cv-section">
+  <img src="/HackathonSecondTry/assets/images/CVAssets/Iconographic.png" alt="CV Infographic" class="cv-infographic">
+</div>
+
+<!-- Audio Mode Content -->
+<div id="cv-mode-audio" class="cv-section">
+  <div class="audio-player-container">
+    <h3>Audio Summary</h3>
+    <br>
+    <audio controls class="neon-audio">
+      <source src="/HackathonSecondTry/assets/images/CVAssets/AudioSummary.m4a" type="audio/mp4">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+</div> <!-- End cv-content-wrapper -->
 
 <style>
 /* Floating Social Links - Matching Home Page */
@@ -343,7 +376,99 @@ html[data-theme="cyberpunk"] .skills-grid img.invert-dark:hover {
 .greedy-nav .visible-links li[style*="display: none"] {
   display: inline-block !important;
 }
+
+/* --- CV MODE SWITCHER STYLES --- */
+.cv-mode-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.mode-btn {
+  background: transparent;
+  border: 2px solid var(--global-link-color); /* Obey Theme Color */
+  color: var(--global-text-color); /* Obey Theme Text */
+  padding: 0.5rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.mode-btn:hover {
+  background: var(--global-link-color);
+  color: var(--global-bg-color);
+  box-shadow: 0 0 10px var(--global-link-color); /* Neon Glow effect */
+}
+
+.mode-btn.active {
+  background: var(--global-link-color);
+  color: var(--global-bg-color);
+  box-shadow: 0 0 15px var(--global-link-color);
+}
+
+.cv-section {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.cv-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Visual Mode Styles */
+.cv-infographic {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Audio Mode Styles */
+.audio-player-container {
+  text-align: center;
+  padding: 3rem;
+  border: 2px solid var(--global-border-color);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.05);
+}
+
+.neon-audio {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
 </style>
+
+<script>
+// CV Mode Switching Logic
+function switchMode(mode) {
+  // Update Buttons
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.currentTarget.classList.add('active');
+
+  // Update Sections
+  document.querySelectorAll('.cv-section').forEach(section => {
+    section.classList.remove('active');
+  });
+  document.getElementById('cv-mode-' + mode).classList.add('active');
+}
+</script>
 
 <script>
 // Disable greedy navigation behavior - keep all items visible
