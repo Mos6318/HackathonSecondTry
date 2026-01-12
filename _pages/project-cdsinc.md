@@ -325,8 +325,6 @@ author_profile: false
 
 <!-- Scripts for Interactivity -->
 <script>
-/* --- Gallery Logic --- */
-// List of images provided in assets/projects
 const images = [
   "{{ site.baseurl }}/assets/projects/Picture01.png",
   "{{ site.baseurl }}/assets/projects/Pictur02.png",
@@ -337,27 +335,22 @@ const images = [
 let currentIndex = 0;
 const heroElement = document.getElementById('hero-gallery');
 
-// Preload images to prevent flickering
 images.forEach(src => {
   const img = new Image();
   img.src = src;
 });
 
-// Set initial image
-heroElement.style.backgroundImage = `url('${images[0]}')`;
-
-function cycleImage() {
-  // Increment index (loop back to 0 if at end)
-  currentIndex = (currentIndex + 1) % images.length;
-  
-  // Update background
-  heroElement.style.backgroundImage = `url('${images[currentIndex]}')`;
-  
-  // Optional: Console log for debugging
-  console.log("Switched to image:", images[currentIndex]);
+if(heroElement) {
+    heroElement.style.backgroundImage = `url('${images[0]}')`;
 }
 
-/* --- Collapsible Logic --- */
+function cycleImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  if(heroElement) {
+    heroElement.style.backgroundImage = `url('${images[currentIndex]}')`;
+  }
+}
+
 function toggleSection(id, btn) {
   const content = document.getElementById(id);
   const isExpanded = content.classList.contains('expanded');
