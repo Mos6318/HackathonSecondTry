@@ -148,7 +148,7 @@ redirect_from:
 .projects-section {
   padding: 4rem 0;
   min-height: auto;
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -163,7 +163,7 @@ redirect_from:
   display: grid;
   grid-template-columns: 698px 482px;
   column-gap: 124px;
-  max-width: 1920px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto 0 auto;
   padding: 62px 0;
@@ -426,7 +426,6 @@ section {
 <script>
 // Disable greedy navigation behavior - keep all items visible
 document.addEventListener('DOMContentLoaded', function() {
-  // Disable greedy navigation behavior - keep all items visible
   // Remove any inline styles that hide navigation items
   const navItems = document.querySelectorAll('.greedy-nav .visible-links li');
   navItems.forEach(item => {
