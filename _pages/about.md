@@ -10,7 +10,7 @@ redirect_from:
 
 <section id="home" class="hero-section">
   <div class="hero-content">
-    <h1 class="hero-title">Lily</h1>
+    <h1 class="hero-title">Just Monika</h1>
     <p class="hero-tagline">Where creativity meets purpose and impact.</p>
     <p class="hero-welcome">
       Welcome to my digital portfolio. Here you'll find a collection of my latest projects, demonstrating my passion for building immersive and user-centric digital experiences. Explore my work and get to know the person behind the code.
